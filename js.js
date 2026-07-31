@@ -10,6 +10,7 @@ const No30 = 1000000000000000000000000000000;
 const De33 = 1000000000000000000000000000000000;
 const EXP36 = 100000000000000000000000000000000000;
 // this above is W coding from me who learned coding like 2 days ago not knowing you can just type e36
+// testing. i think my other edit didn't work
 
 let PointUpgradesA = [0, 0, 0, 0, 0, 0]
 let PointUpgradesB = [0, 0, 0, 0, 0, 0]
