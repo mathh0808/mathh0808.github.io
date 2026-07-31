@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+    <meta name="viewport", content="width=device-width, initial-scale=1">
+    <title>evil incremental game</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+<p id="currency" title="yooo">Wait a bit!</p>
+    <p id="currencyGain">The game is either broken</p>
+    <p id="currencyGainB">or didn't load yet (its fast)
+</p>
+
+
+
+
+<div id="container">
+ 
+<!-- first line-->
+
+<button id="upgradeAA_P", class="upgrade", onclick="AA_P()">
+    <p id="titleAA_P", class="title">#1 - Beginning</p>
+    <p id="infoAA_P", class="info">Start gaining points (no way who would've guessed)</p>
+    <p id="priceAA_P", class="price">Free (0/1)</p>
+</button>
+<button id="upgradeAB_P", class="upgrade", onclick="AB_P()">
+    <p id="titleAB_P", class="titleInvis">#2 - Addition</p>
+    <p id="infoAB_P", class="infoInvis">+1 base point gain.</p>
+    <p id="priceAB_P", class="priceInvis">5P (0/3)</p>
+</button>
+<button id="upgradeAC_P", class="upgrade", onclick="AC_P()">
+    <p id="titleAC_P", class="titleInvis">#4 - Faster!</p>
+    <p id="infoAC_P", class="infoInvis">#2's boost is increased by 0.5</p>
+    <p id="priceAC_P", class="priceInvis">40P (0/5)</p>
+</button>
+<button id="upgradeAD_P", class="upgrade", onclick="AD_P()">
+    <p id="titleAD_P", class="titleInvis">#6b - I love #2</p>
+    <p id="infoAD_P", class="infoInvis">+12 to #2's max so you can buy it more!!! Increases #6a's price by 8x.</p>
+    <p id="priceAD_P", class="priceInvis">200P (0/1)</p>
+</button>
+<button id="upgradeAE_P", class="upgrade", onclick="AE_P()">
+    <p id="titleAE_P", class="titleInvis">WIP</p>
+    <p id="infoAE_P", class="infoInvis">WIP</p>
+    <p id="priceAE_P", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeAF_P", class="upgrade", onclick="AF_P()">
+    <p id="titleAF_P", class="titleInvis">WIP</p>
+    <p id="infoAF_P", class="infoInvis">WIP</p>
+    <p id="priceAF_P", class="priceInvis">WIP</p>
+</button>
+
+<!-- second line-->
+
+<button id="upgradeBA_P", class="upgrade", onclick="BA_P()">
+    <p id="titleBA_P", class="titleInvis">#3 - Multiplication</p>
+    <p id="infoBA_P", class="infoInvis">*1.5 Point gain! wow thats very bad</p>
+    <p id="priceBA_P", class="priceInvis">15P (0/1)</p>
+</button>
+<button id="upgradeBB_P", class="upgrade", onclick="BB_P()">
+    <p id="titleBB_P", class="titleInvis">#7 - o</p>
+    <p id="infoBB_P", class="infoInvis">Point gain speed +1x (Before they take 1s but <br>now it's 0.5s)</p>
+    <p id="priceBB_P", class="priceInvis">50 Points</p>
+</button>
+<button id="upgradeBC_P", class="upgrade", onclick="BC_P()">
+    <p id="titleBC_P", class="titleInvis">#6a - More Nulti</p>
+    <p id="infoBC_P", class="infoInvis">*2 Points again! Increases #6b's price by 8x.</p>
+    <p id="priceBC_P", class="priceInvis">200P (0/1)</p>
+</button>
+<button id="upgradeBD_P", class="upgrade">
+    <p id="titleBD_P", class="titleInvis">WIP</p>
+    <p id="infoBD_P", class="infoInvis">WIP</p>
+    <p id="priceBD_P", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeEB_P", class="upgrade">
+    <p id="titleBE_P", class="titleInvis">WIP</p>
+    <p id="infoBE_P", class="infoInvis">WIP</p>
+    <p id="priceBE_P", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeBF_P", class="upgrade">
+    <p id="titleBF_P", class="titleInvis">WIP</p>
+    <p id="infoBF_P", class="infoInvis">WIP</p>
+    <p id="priceBF_P", class="priceInvis">WIP</p>
+</button>
+
+<!-- third line-->
+
+<button id="upgradeCA_P", class="upgrade", onclick="CA_P()">
+    <p id="titleCA_P", class="titleInvis">#5 - Double</p>
+    <p id="infoCA_P", class="infoInvis">*2 Point gain. The cool upgrades are coming soon! <br> CURRENT ENDGAME LOL</p>
+    <p id="priceCA_P", class="priceInvis">125P (0/1)</p>
+</button>
+<button id="upgradeCB_P", class="upgrade", onclick="CB_P()">
+    <p id="titleCB_P", class="titleInvis">#7 - </p>
+    <p id="infoCB_P", class="infoInvis">Point gain speed +1x (Before they take 1s but <br>now it's 0.5s)</p>
+    <p id="priceCB_P", class="priceInvis">50 Points</p>
+</button>
+<button id="upgradeCC_P", class="upgrade", onclick="CC_P()">
+    <p id="titleCC_P", class="titleInvis">#6a - More Points</p>
+    <p id="infoCC_P", class="infoInvis">+2 base points. Unlocks a good upgrade. Also makes #6b cost 10x more.</p>
+    <p id="priceCC_P", class="priceInvis">50 Points</p>
+</button>
+<button id="upgradeCD_P", class="upgrade">
+    <p id="titleCD_P", class="titleInvis">WIP</p>
+    <p id="infoCD_P", class="infoInvis">WIP</p>
+    <p id="priceCD_P", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeCB_P", class="upgrade">
+    <p id="titleCE_P", class="titleInvis">WIP</p>
+    <p id="infoCE_P", class="infoInvis">WIP</p>
+    <p id="priceCE_P", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeCF_P", class="upgrade">
+    <p id="titleCF_P", class="titleInvis">WIP</p>
+    <p id="infoCF_P", class="infoInvis">WIP</p>
+    <p id="priceCF_P", class="priceInvis">WIP</p>
+</button>
+
+
+
+
+
+
+</div>
+
+
+<p id="infoBox">The very EVIL (with reversed colors idk why) info box <br><br>
+
+The "button" parts of upgrades is the part you gotta click to buy it<br><br>
+
+I'm very bad at coding (learned coding like 5 days before this game and scripting 2 days)<br>
+so you might need to zoom in to clearly see text<br>
+remember that the buttons to switch baseplate are on the sides tho!<br><br>
+
+Scientific notations starts at 1e36 (or after De-cillion)</p>
+
+
+
+
+<script src="js.js"></script>
+</body>
+</html>
