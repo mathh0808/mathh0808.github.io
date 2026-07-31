@@ -48,13 +48,13 @@ document.getElementById("currency").textContent = (points + " Point(s)")
 setInterval(function(){
 
 document.getElementById("currency").textContent = (pointsSuffix + " Point(s)");
-
+// point calculation #1
 pointsBase = 1 + (PointUpgrades[0][1]*(1+PointUpgrades[0][2]/2));
-pointsMult = 1 * (1+0.5*PointUpgrades[1][0]) * (1+PointUpgrades[2][0]);
-pointsExp = 1;
+pointsMult = 1 * (1+0.5*PointUpgrades[1][0]) * (1+PointUpgrades[2][0]) * (1+PointUpgrades[1][2]);
+pointsExp = 1 + (0.02*PointUpgrades[3][0]) ;
 
 
-pointsTotal = PointUpgrades[0][0]*(pointsBase*pointsMult)**pointsExp;
+pointsTotal = Math.round(PointUpgrades[0][0]*(pointsBase*pointsMult)**pointsExp*10)/10;
 
 // POINTS DISPLAY
 switch(true){
@@ -147,7 +147,7 @@ switch(true){
 document.getElementById("currencyGain").textContent = ((pointsTotalSuffix)+"/s");
 document.getElementById("priceAA_P").textContent = "Free ("+PointUpgrades[0][0]+"/1)";
 
-if (true) {
+if (true) { // we don't talk abput this ok?
 if (PointUpgrades[0][0] == 0) {
     document.getElementById("currencyGainB").textContent = ("Buy upgrade #1 please");
 
@@ -171,14 +171,14 @@ else {
     document.getElementById("titleBA_P").className = "title" ;
     document.getElementById("infoBA_P").className = "info" ;
     document.getElementById("priceBA_P").className = "price" ;
-    document.getElementById("currencyGainB").textContent = ("(("+pointsBase+" [Base] *"+pointsMult+")^"+pointsExp+")/25 every 40ms");
-    document.getElementById("priceAB_P").textContent = (Math.floor(((2+PointUpgrades[0][1])**3-3))) + "P (" + PointUpgrades[0][1] + "/3)";
+    document.getElementById("currencyGainB").textContent = ("(("+pointsBase+" [Base] *"+pointsMult+")**"+pointsExp+")/25 every 40ms");
+    document.getElementById("priceAB_P").textContent = (Math.floor(((2+PointUpgrades[0][1])**3.5/3+2))) + "P (" + PointUpgrades[0][1] + "/" + (3+PointUpgrades[0][3]*12) + ")";
     document.getElementById("priceBA_P").textContent = "15P ("+PointUpgrades[1][0]+"/1)";
 
 
 }
 
-
+// welcome to the wall of doom
 
 if (PointUpgrades[0][1] == 0) {
     document.getElementById("upgradeAC_P").className = "upgradeInvis" ;
@@ -216,7 +216,8 @@ else {
     document.getElementById("titleBC_P").className = "title" ;
     document.getElementById("infoBC_P").className = "info" ;
     document.getElementById("priceBC_P").className = "price" ;
-    document.getElementById("priceAC_P").textContent = 40*(4**PointUpgrades[0][2])+"P ("+PointUpgrades[0][2]+"/5)";
+    document.getElementById("priceAD_P").textContent = 200*(PointUpgrades[1][2]*9+1)+"P ("+PointUpgrades[0][3]+"/1)";
+    document.getElementById("priceBC_P").textContent = 200*(PointUpgrades[0][3]*9+1)+"P ("+PointUpgrades[1][2]+"/1)";
 }
 
 
@@ -233,6 +234,22 @@ else {
     document.getElementById("priceCA_P").className = "price" ;
     document.getElementById("priceCA_P").textContent = "125P ("+PointUpgrades[2][0]+"/1)";
 }
+
+
+if (PointUpgrades[2][0] == 0) {
+    document.getElementById("upgradeDA_P").className = "upgradeInvis" ;
+    document.getElementById("titleDA_P").className = "titleInvis" ;
+    document.getElementById("infoDA_P").className = "infoInvis" ;
+    document.getElementById("priceDA_P").className = "priceInvis" ;
+    }
+else {
+    document.getElementById("upgradeDA_P").className = "upgrade" ;
+    document.getElementById("titleDA_P").className = "title" ;
+    document.getElementById("infoDA_P").className = "info" ;
+    document.getElementById("priceDA_P").className = "price" ;
+    document.getElementById("priceDA_P").textContent = 800*(25**PointUpgrades[3][0]) + "P (" + PointUpgrades[3][0] + "/10)";
+}
+
 }
 
 document.getElementById("infoAB_P").textContent = "+" + (1+PointUpgrades[0][2]/2) + " base point gain.";
@@ -253,15 +270,15 @@ setInterval(function(){
 
 
 
-
+// the 2nd wall of doom
 function AA_P() {
     PointUpgrades[0][0] = 1
 }
 
 function AB_P() {
-    if (points >= Math.floor(((2+PointUpgrades[0][1])**3-3))) {
-        if (PointUpgrades[0][1] <= 2) {
-        points -= Math.floor(((2+PointUpgrades[0][1])**3-3));
+    if (points >= Math.floor(((2+PointUpgrades[0][1])**3.5/3+2))) {
+        if (PointUpgrades[0][1] <= (2+PointUpgrades[0][3]*12)) {
+        points -= Math.floor(((2+PointUpgrades[0][1])**3.5/3+2));
         PointUpgrades[0][1] += 1;
         }
     }
@@ -277,9 +294,9 @@ function AC_P() {
 }   
 
 function AD_P() {
-    if (points >= 40*(4**PointUpgrades[0][2])) {
-        if (PointUpgrades[0][30] <= 0) {
-        points -= 40*(4**PointUpgrades[0][2]);
+    if (points >= 200*(PointUpgrades[1][2]*7+1)) {
+        if (PointUpgrades[0][3] <= 0) {
+        points -= 200*(PointUpgrades[1][2]*7+1);
         PointUpgrades[0][3] += 1;
         }
     }
@@ -295,9 +312,9 @@ function BA_P() {
 }
 
 function BC_P() {
-    if (points >= 200) {
+    if (points >= 200*(PointUpgrades[0][3]*7+1)) {
         if (PointUpgrades[1][2] <= 0) {
-        points -= 200;
+        points -= 200*(PointUpgrades[0][3]*7+1);
         PointUpgrades[1][2] = 1;
         }
     }
@@ -312,4 +329,13 @@ function CA_P() {
     }
 }   
 
+
+function DA_P() {
+    if (points >= 800*(25**PointUpgrades[3][0])) {
+        if (PointUpgrades[3][0] <= 9) {
+        points -= 800*(25**PointUpgrades[3][0]);
+        PointUpgrades[3][0] += 1;
+        }
+    }
+}   
 
