@@ -104,11 +104,18 @@ let researchDone = false;
 let researchSuffix = "";
 let researchTotalSuffix = "";
 
-
+if (localStorage.getItem("Points") !== null) {
 points = JSON.parse(localStorage.getItem("Points"));
+}
+if (localStorage.getItem("Research") !== null) {
 research = JSON.parse(localStorage.getItem("Research"));
+}
+if (localStorage.getItem("ResearchDone") !== null) {
 researchDone = JSON.parse(localStorage.getItem("ResearchDone"));
+}
+if (localStorage.getItem("timeSinceR") !== null) {
 timeSinceR = JSON.parse(localStorage.getItem("timeSinceR"));
+}
 
 let SuffixTransferValue = [0, 0, 0, 0, 0, 0];
 let SuffixValue = [0, 0, 0, 0, 0, 0];
@@ -687,21 +694,22 @@ if(true) {
 
 
 
-// POINT GAIN FUNCTION
+// POINT GAIN FUNCTION AND MORE
 setInterval(function(){
     points += pointsTotal/25;
     timeSinceR += 40000;
+}, 40);
 
+
+// SAVE FUNCTION
+setInterval(function(){
     localStorage.setItem("Points", JSON.stringify(points));
     localStorage.setItem("PointUpgrades", JSON.stringify(PointUpgrades));
     localStorage.setItem("Research", JSON.stringify(research));
     localStorage.setItem("ResearchDone", JSON.stringify(researchDone));
     localStorage.setItem("ResearchUpgrades", JSON.stringify(ResearchUpgrades));
     localStorage.setItem("timeSinceR", JSON.stringify(timeSinceR));
-}, 40);
-
-
-
+}, 15000);
 
 
 
