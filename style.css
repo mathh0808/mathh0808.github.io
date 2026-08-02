@@ -1,7 +1,6 @@
 body {
  background-color: #000000;
- height: 3000px;
- width: 1500px;
+ align-items: center;
  background-image: repeating-linear-gradient(135deg,
   #aaaaaa,
   #aaaaaa 20px,
@@ -12,74 +11,85 @@ body {
   background-size: 84.85px 84.85px;
 font-family: Ubuntu;
 
-
-#currency {
+#pointTotal {
  font-size: 270%;
  text-align: center;
  background-color:#dddddd;
  width: 600px;
- left: 50%;
- margin-left: auto;
- margin-right: auto;
+ margin: auto;
+ margin-top: 10px;
  border-radius: 10000px;
  border-color: #444444;
  border-width: 8px;
  border-style:solid;
  padding: 10px;
- box-sizing: border-box;
  user-select: none;
- border-style:solid;
  }
 
-#currencyGain {
+#pointGain {
  font-size: 130%;
  text-align: center;
  background-color:#dddddd;
  width: 500px;
- left: 50%;
- margin-left: auto;
- margin-right: auto;
- margin-top: -30px;
+ margin: auto;
+ margin-top: 10px;
  border-radius: 10000px;
  border-color: #444444;
  border-width: 8px;
  border-style:solid;
  padding: 10px;
- box-sizing: border-box;
  user-select: none;
  border-style:double;
 }
 
 
-#currencyGainB {
+#pointGainB {
  font-size: 100%;
  text-align: center;
  background-color:#dddddd;
  width: 400px;
- left: 50%;
- margin-left: auto;
- margin-right: auto;
- margin-top: -7px;
+ margin: auto;
+ margin-top: 10px;
  border-radius: 10000px;
  border-color: #444444;
  border-width:8px;
  border-style:solid;
  padding: 10px;
- box-sizing: border-box;
+ user-select: none;
+ border-style:double;
+}
+
+
+#NiceInfoBox {
+ font-size: 65%;
+ text-align: center;
+ background-color:#dddddd;
+ width: 300px;
+ margin: auto;
+ margin-top: 10px;
+ border-radius: 10000px;
+ border-color: #444444;
+ border-width:8px;
+ border-style:solid;
+ padding: 10px;
  user-select: none;
  border-style:double;
 }
 
 
 
-#container {
+
+
+
+
+
+
+#containerP {
  font-size: 300%;
  background-color:#dddddd;
  width: 900px;
  height: 588px;
- left: 50%;
- margin-left: auto;
- margin-right: auto;
+ margin: auto;
  margin-top: 50px;
  border-radius: 10px;
  border-color: #000000;
@@ -87,7 +97,23 @@ font-family: Ubuntu;
  padding: 10px;
  box-sizing: border-box;
  user-select: none;
- border-style:outset;
+ border-style: outset;
+}
+
+#containerR {
+ font-size: 300%;
+ background-color:#e3f6f8;
+ width: 900px;
+ height: 588px;
+ margin: auto;
+ margin-top: 50px;
+ border-radius: 10px;
+ border-color: #25b0bf;
+ border-width: 12px; border-style:solid;
+ padding: 10px;
+ box-sizing: border-box;
+ user-select: none;
+ border-style: outset;
 }
 
 
@@ -154,7 +180,7 @@ font-family: Ubuntu;
 }
 
 .price {
- font-size: 7.7%;
+ font-size: 7.25%;
  text-align: center;
  color:#e4e4e4;
  background-color:#505050;
@@ -174,16 +200,19 @@ font-family: Ubuntu;
 }
 
 
-.upgrade:hover {
+
+
+
+.upgradeBlue {
  font-size: 300%;
  text-align: center;
  align-items: center;
- background-color:#d4d9e1;
+ background-color: #b8dde2;
  width: 122px;
  height: 80px;
  margin: 5.25px;
  border-radius: 6px;
- border-color: #9eadc5;
+ border-color: #9bb2b3;
  border-width: 3px; border-style:solid;
  padding: 10px;
  box-sizing: border-box;
@@ -192,11 +221,87 @@ font-family: Ubuntu;
  cursor:pointer;
  border-style:outset;
 }
-.upgrade:active {
-  border-style:double
+
+.titleBlue {
+ font-size: 5.5%;
+ text-align: center;
+ color:#ffb8b8;
+ background-color:#6b8588;
+ width: 106px;
+ height: 15px;
+ margin-left: -5px;
+ margin-right: 5px;
+ margin-top: -7.5px;
+ margin-bottom: 7.5px; 
+ border-radius: 3px;
+ border-color: #000000;
+ border-width: 2px; border-style:solid;
+ box-sizing: border-box;
+ user-select: none;
+ position: relative;
+ border-style:outset;
+}
+
+.infoBlue {
+ font-size: 5.4%;
+ text-align: center;
+ color:#ffffff;
+ background-color:#81a0a3;
+ width: 106px;
+ height: 31px;
+ margin-left: -5px;
+ margin-right: 5px;
+ margin-top: -5px;
+ margin-bottom: -5px; 
+ border-radius: 3px;
+ border-color: #000000;
+ border-width: 2px; border-style:solid;
+ box-sizing: border-box;
+ user-select: none;
+ position: relative;
+ border-style:outset;
+}
+.priceBlue {
+ font-size: 7.25%;
+ text-align: center;
+ color:#e4e4e4;
+ background-color:#6b8588;
+ width: 106px;
+ height: 15px;
+ margin-left: -5px;
+ margin-right: 5px;
+ margin-top: 7.5px;
+ margin-bottom: -7.5px; 
+ border-radius: 4px;
+ border-color: #000000;
+ border-width: 2px; border-style:solid;
+ box-sizing: border-box;
+ user-select: none;
+ position: relative;
+ border-style:outset;
 }
 
 
+
+
+.upgrade:hover {
+ border-color: #9ba3c9;
+ background-color: #b9c9eb;
+ border-style:outset;
+}
+
+.upgrade:active {
+  border-style:double
+}
+.upgradeBlue:hover {
+ border-color: #9ba3c9;
+ background-color: #b9c9eb;
+ border-style:outset;
+}
+
+.upgradeBlue:active {
+  border-style:double
+}
 
 
 
@@ -301,10 +406,143 @@ font-family: Ubuntu;
 
 
 
+#DevToolsBox {
+ font-size: 75%;
+ text-align: center;
+ background-color:#dddddd;
+ width: 500px;
+ margin: auto;
+ margin-top: 10px;
+ border-radius: 10000px;
+ border-color: #3f7967;
+ border-width:8px;
+ border-style:solid;
+ padding: 10px;
+ user-select: none;
+ border-style:double;
+ display:block;
+}
+
+
+#RESET {
+ font-size: 80%;
+ text-align: center;
+ background-color:#dddddd;
+ width: 400px;
+ margin: auto;
+ margin-top: 10px;
+ border-radius: 10000px;
+ border-color: #995252;
+ border-width:8px;
+ border-style:solid;
+ padding: 10px;
+ user-select: none;
+ border-style:double;
+ display:block;
+ cursor:pointer;
+}
+
+
+#MOREPOINTS {
+ font-size: 80%;
+ text-align: center;
+ background-color:#dddddd;
+ width: 300px;
+ margin: auto;
+ margin-top: 10px;
+ border-radius: 10000px;
+ border-color: #4a5d90;
+ border-width:8px;
+ border-style:solid;
+ padding: 10px;
+ user-select: none;
+ border-style:double;
+ display:block;
+ cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.currenciesP {
+ font-size: 100%;
+ width: 150px;
+ height: 18px;
+ text-align: center;
+ background-color:#bbbbbb;
+ border-radius: 10px;
+ border-color: #505050;
+ border-width: 5px;
+ border-style:solid;
+ padding: 5px;
+ user-select: none;
+ bottom: 0;
+ right: 0;
+ position: fixed;
+ margin: 10px;
+ border-style:outset;
+}
+.currenciesR {
+ font-size: 100%;
+ width: 150px;
+ height: 18px;
+ text-align: center;
+ background-color:#b8dde2;
+ border-radius: 10px;
+ border-color: #25b0bf;
+ border-width: 5px;
+ border-style:solid;
+ padding: 5px;
+ user-select: none;
+ bottom: 0;
+ right: 0;
+ position: fixed;
+ margin-right: 10px;
+ margin-bottom: 52px;
+ border-style:outset;
+}
+
+
+
+
+
+
 
 #infoBox {
  color:#aaaaaa;
- font-size: 200%;
+ font-size: 150%;
  text-align: center;
  background-color:#414141;
  width: 900px;
@@ -318,6 +556,7 @@ font-family: Ubuntu;
  border-style:solid;
  padding: 10px;
  box-sizing: border-box;
+ user-select:text ;
 }
 
 
