@@ -15,63 +15,63 @@ font-family: Ubuntu;
  font-size: 270%;
  text-align: center;
  background-color:#dddddd;
- width: 600px;
+ width: 720px;
  margin: auto;
- margin-top: 10px;
+ margin-top: 12px;
  border-radius: 10000px;
  border-color: #444444;
  border-width: 8px;
  border-style:solid;
- padding: 10px;
+ padding: 12px;
  user-select: none;
  }
 
 #pointGain {
- font-size: 130%;
+ font-size: 156%;
  text-align: center;
  background-color:#dddddd;
- width: 500px;
+ width: 600px;
  margin: auto;
- margin-top: 10px;
+ margin-top: 12px;
  border-radius: 10000px;
  border-color: #444444;
  border-width: 8px;
  border-style:solid;
- padding: 10px;
+ padding: 12px;
  user-select: none;
  border-style:double;
 }
 
 
 #pointGainB {
- font-size: 100%;
+ font-size: 120%;
  text-align: center;
  background-color:#dddddd;
- width: 400px;
+ width: 480px;
  margin: auto;
- margin-top: 10px;
+ margin-top: 12px;
  border-radius: 10000px;
  border-color: #444444;
  border-width:8px;
  border-style:solid;
- padding: 10px;
+ padding: 12px;
  user-select: none;
  border-style:double;
 }
 
 
 #NiceInfoBox {
- font-size: 65%;
+ font-size: 72%;
  text-align: center;
  background-color:#dddddd;
- width: 300px;
+ width: 360px;
  margin: auto;
- margin-top: 10px;
+ margin-top: 12px;
  border-radius: 10000px;
  border-color: #444444;
  border-width:8px;
  border-style:solid;
- padding: 10px;
+ padding: 12px;
  user-select: none;
  border-style:double;
 }
@@ -87,14 +87,14 @@ font-family: Ubuntu;
 #containerP {
  font-size: 300%;
  background-color:#dddddd;
- width: 900px;
- height: 588px;
+ width: 1080px;
+ height: 720px;
  margin: auto;
  margin-top: 50px;
- border-radius: 10px;
+ border-radius: 12px;
  border-color: #000000;
  border-width: 12px; border-style:solid;
- padding: 10px;
+ padding: 12px;
  box-sizing: border-box;
  user-select: none;
  border-style: outset;
@@ -103,14 +103,14 @@ font-family: Ubuntu;
 #containerR {
  font-size: 300%;
  background-color:#e3f6f8;
- width: 900px;
- height: 588px;
+ width: 1080px;
+ height: 720px;
  margin: auto;
  margin-top: 50px;
- border-radius: 10px;
+ border-radius: 12px;
  border-color: #25b0bf;
  border-width: 12px; border-style:solid;
- padding: 10px;
+ padding: 12px;
  box-sizing: border-box;
  user-select: none;
  border-style: outset;
@@ -125,13 +125,13 @@ font-family: Ubuntu;
  text-align: center;
  align-items: center;
  background-color:#bbbbbb;
- width: 122px;
- height: 80px;
- margin: 5.25px;
- border-radius: 6px;
+ width: 146.8px;
+ height: 96px;
+ margin: 7.565px;
+ border-radius: 5px;
  border-color: #717171;
  border-width: 3px; border-style:solid;
- padding: 10px;
+ padding: 12px;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -140,19 +140,20 @@ font-family: Ubuntu;
 }
 
 .title {
- font-size: 5.5%;
+ font-size: 6.6%;
  text-align: center;
  color:#ffb8b8;
  background-color:#505050;
- width: 106px;
- height: 15px;
+ width: 126px;
+ height: 18px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: -7.5px;
- margin-bottom: 7.5px; 
+ margin-top: -9px;
+ margin-bottom:9px; 
  border-radius: 3px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -160,19 +161,20 @@ font-family: Ubuntu;
 }
 
 .info {
- font-size: 5.4%;
+ font-size: 6.48%;
  text-align: center;
  color:#ffffff;
  background-color:#929292;
- width: 106px;
- height: 31px;
+ width: 126px;
+ height: 37.2px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: -5px;
- margin-bottom: -5px; 
+ margin-top: -6px;
+ margin-bottom: -6px; 
  border-radius: 3px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -180,19 +182,20 @@ font-family: Ubuntu;
 }
 
 .price {
- font-size: 7.25%;
+ font-size: 8.5%;
  text-align: center;
  color:#e4e4e4;
  background-color:#505050;
- width: 106px;
- height: 15px;
+ width: 126px;
+ height: 18px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: 7.5px;
- margin-bottom: -7.5px; 
- border-radius: 4px;
+ margin-top:9px;
+ margin-bottom: -9px; 
+ border-radius: 4.8px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -208,13 +211,13 @@ font-family: Ubuntu;
  text-align: center;
  align-items: center;
  background-color: #b8dde2;
- width: 122px;
- height: 80px;
- margin: 5.25px;
- border-radius: 6px;
+ width: 146.8px;
+ height: 96px;
+ margin: 7.565px;
+ border-radius: 5px;
  border-color: #9bb2b3;
  border-width: 3px; border-style:solid;
- padding: 10px;
+ padding: 12px;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -223,19 +226,20 @@ font-family: Ubuntu;
 }
 
 .titleBlue {
- font-size: 5.5%;
+ font-size: 6.6%;
  text-align: center;
  color:#ffb8b8;
  background-color:#6b8588;
- width: 106px;
- height: 15px;
+ width: 126px;
+ height: 18px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: -7.5px;
- margin-bottom: 7.5px; 
+ margin-top: -9px;
+ margin-bottom:9px; 
  border-radius: 3px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -243,38 +247,40 @@ font-family: Ubuntu;
 }
 
 .infoBlue {
- font-size: 5.4%;
+ font-size: 6.48%;
  text-align: center;
  color:#ffffff;
  background-color:#81a0a3;
- width: 106px;
- height: 31px;
+ width: 126px;
+ height: 37.2px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: -5px;
- margin-bottom: -5px; 
+ margin-top: -6px;
+ margin-bottom: -6px; 
  border-radius: 3px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
  border-style:outset;
 }
 .priceBlue {
- font-size: 7.25%;
+ font-size: 8.5%;
  text-align: center;
  color:#e4e4e4;
  background-color:#6b8588;
- width: 106px;
- height: 15px;
+ width: 126px;
+ height: 18px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: 7.5px;
- margin-bottom: -7.5px; 
- border-radius: 4px;
+ margin-top:9px;
+ margin-bottom: -9px; 
+ border-radius: 4.8px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -310,13 +316,13 @@ font-family: Ubuntu;
  text-align: center;
  align-items: center;
  background-color:#bbbbbb;
- width: 122px;
- height: 80px;
- margin: 5.25px;
- border-radius: 6px;
+ width: 146.8px;
+ height: 96px;
+ margin: 7.565px;
+ border-radius: 5px;
  border-color: #717171;
  border-width: 3px; border-style:solid;
- padding: 10px;
+ padding: 12px;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -330,15 +336,16 @@ font-family: Ubuntu;
  text-align: center;
  color:#ffb8b8;
  background-color:#505050;
- width: 106px;
- height: 15px;
+ width: 126px;
+ height: 18px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: -7.5px;
- margin-bottom: 7.5px; 
+ margin-top: -9px;
+ margin-bottom:9px; 
  border-radius: 3px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -348,19 +355,20 @@ font-family: Ubuntu;
 }
 
 .infoInvis {
- font-size: 5.5%;
+ font-size: 6.6%;
  text-align: center;
  color:#ffffff;
  background-color:#929292;
- width: 106px;
- height: 31px;
+ width: 126px;
+ height: 37.2px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: -5px;
- margin-bottom: -5px; 
+ margin-top: -6px;
+ margin-bottom: -6px; 
  border-radius: 3px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -370,19 +378,20 @@ font-family: Ubuntu;
 }
 
 .priceInvis {
- font-size: 7.5%;
+ font-size: 9%;
  text-align: center;
  color:#e4e4e4;
  background-color:#505050;
- width: 106px;
- height: 15px;
+ width: 126px;
+ height: 18px;
  margin-left: -5px;
  margin-right: 5px;
- margin-top: 7.5px;
- margin-bottom: -7.5px; 
- border-radius: 4px;
+ margin-top:9px;
+ margin-bottom: -9px; 
+ border-radius: 4.8px;
  border-color: #000000;
- border-width: 2px; border-style:solid;
+ border-width: 2.4px;
+ border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -406,36 +415,36 @@ font-family: Ubuntu;
 
 
 
-#DevToolsBox {
+.DevToolsBox {
  font-size: 75%;
  text-align: center;
  background-color:#dddddd;
- width: 500px;
+ width: 600px;
  margin: auto;
- margin-top: 10px;
+ margin-top: 12px;
  border-radius: 10000px;
  border-color: #3f7967;
  border-width:8px;
  border-style:solid;
- padding: 10px;
+ padding: 12px;
  user-select: none;
  border-style:double;
  display:block;
 }
 
 
-#RESET {
+.RESET {
  font-size: 80%;
  text-align: center;
  background-color:#dddddd;
- width: 400px;
+ width: 480px;
  margin: auto;
- margin-top: 10px;
+ margin-top: 12px;
  border-radius: 10000px;
  border-color: #995252;
  border-width:8px;
  border-style:solid;
- padding: 10px;
+ padding: 12px;
  user-select: none;
  border-style:double;
  display:block;
@@ -443,18 +452,18 @@ font-family: Ubuntu;
 }
 
 
-#MOREPOINTS {
+.MOREPOINTS {
  font-size: 80%;
  text-align: center;
  background-color:#dddddd;
- width: 300px;
+ width: 360px;
  margin: auto;
- margin-top: 10px;
+ margin-top: 12px;
  border-radius: 10000px;
  border-color: #4a5d90;
  border-width:8px;
  border-style:solid;
- padding: 10px;
+ padding: 12px;
  user-select: none;
  border-style:double;
  display:block;
@@ -497,13 +506,13 @@ font-family: Ubuntu;
 
 
 .currenciesP {
- font-size: 100%;
+ font-size: 120%;
  width: 150px;
  height: 18px;
  text-align: center;
  background-color:#bbbbbb;
- border-radius: 10px;
- border-color: #505050;
+ border-radius: 12px;
+ border-color:#505050;
  border-width: 5px;
  border-style:solid;
  padding: 5px;
@@ -511,17 +520,17 @@ font-family: Ubuntu;
  bottom: 0;
  right: 0;
  position: fixed;
- margin: 10px;
+ margin: 12px;
  border-style:outset;
 }
 .currenciesR {
- font-size: 100%;
+ font-size: 120%;
  width: 150px;
  height: 18px;
  text-align: center;
  background-color:#b8dde2;
- border-radius: 10px;
- border-color: #25b0bf;
+ border-radius: 12px;
+ border-color:#25b0bf;
  border-width: 5px;
  border-style:solid;
  padding: 5px;
@@ -529,7 +538,7 @@ font-family: Ubuntu;
  bottom: 0;
  right: 0;
  position: fixed;
- margin-right: 10px;
+ margin-right: 12px;
  margin-bottom: 52px;
  border-style:outset;
 }
@@ -545,16 +554,16 @@ font-family: Ubuntu;
  font-size: 150%;
  text-align: center;
  background-color:#414141;
- width: 900px;
+ width: 1080px;
  left: 50%;
  margin-left: auto;
  margin-right: auto;
  margin-top: 1350px;
- border-radius: 10px;
+ border-radius: 12px;
  border-color: #b90000;
  border-width:8px;
  border-style:solid;
- padding: 10px;
+ padding: 12px;
  box-sizing: border-box;
  user-select:text ;
 }
