@@ -9,7 +9,7 @@
 
 <meta charset="UTF-8">
     <meta name="viewport", content="width=device-width, initial-scale=1">
-    <title>evil incremental game</title>
+    <title> perhance evil incremental game</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -28,15 +28,16 @@
 
 
 
-<p id="currency" title="yooo">Wait a bit!</p>
-    <p id="currencyGain">The game is either broken</p>
-    <p id="currencyGainB">or didn't load yet (its fast)
+<p id="pointTotal">Wait a bit!</p>
+    <p id="pointGain">The game is either broken</p>
+    <p id="pointGainB">or didn't load yet (its fast)</p>
+    <p id="NiceInfoBox">Hover over the price/info of complicated upgrades (and resets) for a more accurate description!
 </p>
 
 
 
-
-<div id="container">
+ <!-- POINT UPGRADES-->
+<div id="containerP">
  
 <!-- first line-->
 
@@ -45,19 +46,19 @@
     <p id="infoAA_P", class="info">Start gaining points (no way who would've guessed)</p>
     <p id="priceAA_P", class="price">Free (0/1)</p>
 </button>
-<button id="upgradeAB_P", class="upgrade", onclick="AB_P()">
+<button id="upgradeAB_P", class="upgrade", onclick="AB_P()"">
     <p id="titleAB_P", class="titleInvis">#2 - Addition</p>
-    <p id="infoAB_P", class="infoInvis">+1 base point gain.</p>
-    <p id="priceAB_P", class="priceInvis">5P (0/3)</p>
+    <p id="infoAB_P", class="infoInvis">+1 base point gain. Unlocks something below later!</p>
+    <p id="priceAB_P", class="priceInvis", title="Price formula: Math.floor((2+UpgradeLevel)**3.6/3+2)">5P (0/3)</p>
 </button>
 <button id="upgradeAC_P", class="upgrade", onclick="AC_P()">
     <p id="titleAC_P", class="titleInvis">#4 - Faster!</p>
     <p id="infoAC_P", class="infoInvis">#2's boost is increased by 0.5</p>
-    <p id="priceAC_P", class="priceInvis">40P (0/5)</p>
+    <p id="priceAC_P", class="priceInvis", title="Price formula: 40*(2.5**UpgradeLevel)">40P (0/5)</p>
 </button>
 <button id="upgradeAD_P", class="upgrade", onclick="AD_P()">
     <p id="titleAD_P", class="titleInvis">#6b - I love #2</p>
-    <p id="infoAD_P", class="infoInvis">+12 to #2's max so you can buy it more!!!<br>Increases #6a's price by 10x.</p>
+    <p id="infoAD_P", class="infoInvis">+12 to #2's max so you can buy it more!!!<br>Increases #6a's price by 20x.</p>
     <p id="priceAD_P", class="priceInvis">200P (0/1)</p>
 </button>
 <button id="upgradeAE_P", class="upgrade", onclick="AE_P()">
@@ -78,25 +79,25 @@
     <p id="infoBA_P", class="infoInvis">*1.5 Point gain! wow thats very bad</p>
     <p id="priceBA_P", class="priceInvis">15P (0/1)</p>
 </button>
-<button id="upgradeBB_P", class="upgrade", onclick="BB_P()">
-    <p id="titleBB_P", class="titleInvis">#7 - o</p>
-    <p id="infoBB_P", class="infoInvis">Yo why are you looking thru the code?? btw endgame stuff here</p>
-    <p id="priceBB_P", class="priceInvis">50 Points</p>
+<button id="upgradeBB_P", class="upgradeBlue", onclick="R()">
+    <p id="titleBB_P", class="titleInvis">#R - The First Reset</p>
+    <p id="infoBB_P", class="infoInvis", title="This shouldn't be complicated to understand...check the price bonus info tho!">Reset all your points progress for research points!!!</p>
+    <p id="priceBB_P", class="priceInvis", title="Research points formula: Math.round(Math.max((points/5000)**0.5, 3)). Multipliers can't affect the minimum research gained!">25kP (+0)</p>
 </button>
 <button id="upgradeBC_P", class="upgrade", onclick="BC_P()">
     <p id="titleBC_P", class="titleInvis">#6a - More Nulti</p>
-    <p id="infoBC_P", class="infoInvis">*2 Points again!<br>Increases #6b's price by 10x.</p>
+    <p id="infoBC_P", class="infoInvis">*3 Points??<br>Increases #6b's price by 20x.</p>
     <p id="priceBC_P", class="priceInvis">200P (0/1)</p>
 </button>
-<button id="upgradeBD_P", class="upgrade">
-    <p id="titleBD_P", class="titleInvis">WIP</p>
-    <p id="infoBD_P", class="infoInvis">WIP</p>
-    <p id="priceBD_P", class="priceInvis">WIP</p>
+<button id="upgradeBD_P", class="upgrade", onclick="BD_P()">
+    <p id="titleBD_P", class="titleInvis">#9 - Upgrade "tree" haha</p>
+    <p id="infoBD_P", class="infoInvis">Points are multiplied by 1+log10(1+Research)</p>
+    <p id="priceBD_P", class="priceInvis">75kP (0/1)</p>
 </button>
 <button id="upgradeEE_P", class="upgrade">
-    <p id="titleBE_P", class="titleInvis">WIP</p>
-    <p id="infoBE_P", class="infoInvis">WIP</p>
-    <p id="priceBE_P", class="priceInvis">WIP</p>
+    <p id="titleBE_P", class="titleInvis">#10 - NOOOO MY LOGS</p>
+    <p id="infoBE_P", class="infoInvis">#8's log function is reduced by one (eg: log10() -> log9())</p>
+    <p id="priceBE_P", class="priceInvis">200kP (0/8)</p>
 </button>
 <button id="upgradeBF_P", class="upgrade">
     <p id="titleBF_P", class="titleInvis">WIP</p>
@@ -112,19 +113,19 @@
     <p id="priceCA_P", class="priceInvis">125P (0/1)</p>
 </button>
 <button id="upgradeCB_P", class="upgrade", onclick="CB_P()">
-    <p id="titleCB_P", class="titleInvis">#7 - </p>
-    <p id="infoCB_P", class="infoInvis">Point gain speed +1x (Before they take 1s but <br>now it's 0.5s)</p>
-    <p id="priceCB_P", class="priceInvis">50 Points</p>
+    <p id="titleCB_P", class="titleInvis">#8 - GAMBLING??</p>
+    <p id="infoCB_P", class="infoInvis">Buying this gives you a multiplier based off a random number from 2 to 1B.</p>
+    <p id="priceCB_P", class="priceInvis", title="Multiplier formula: 2**(10-Math.log10(RandomNumber))/2">25k (x1.81)</p>
 </button>
 <button id="upgradeCC_P", class="upgrade", onclick="CC_P()">
-    <p id="titleCC_P", class="titleInvis">#6a - More Points</p>
-    <p id="infoCC_P", class="infoInvis">+2 base points. Unlocks a good upgrade. Also makes #6b cost 10x more.</p>
-    <p id="priceCC_P", class="priceInvis">50 Points</p>
+    <p id="titleCC_P", class="titleInvis">WIP</p>
+    <p id="infoCC_P", class="infoInvis">WIP</p>
+    <p id="priceCC_P", class="priceInvis">WIP</p>
 </button>
-<button id="upgradeCD_P", class="upgrade">
-    <p id="titleCD_P", class="titleInvis">WIP</p>
-    <p id="infoCD_P", class="infoInvis">WIP</p>
-    <p id="priceCD_P", class="priceInvis">WIP</p>
+<button id="upgradeCD_P", class="upgrade", onclick="CD_P()">
+    <p id="titleCD_P", class="titleInvis">#10 - NOOOO MY LOGS</p>
+    <p id="infoCD_P", class="infoInvis">#8's log function is reduced by one (eg: log10() -> log9())</p>
+    <p id="priceCD_P", class="priceInvis", title="Price formula: 750000*(3.75**UpgradeLevel)">125kP (0/8)</p>
 </button>
 <button id="upgradeCE_P", class="upgrade">
     <p id="titleCE_P", class="titleInvis">WIP</p>
@@ -141,18 +142,18 @@
 
 <button id="upgradeDA_P", class="upgrade", onclick="DA_P()">
     <p id="titleDA_P", class="titleInvis">#7 - Exponents already?</p>
-    <p id="infoDA_P", class="infoInvis">Adds 0.02 to the exponent for every level (it will be shown as ** to avoid confusion)</p>
-    <p id="priceDA_P", class="priceInvis">800P (1/10)</p>
+    <p id="infoDA_P", class="infoInvis">Adds 0.04 to the exponent for every level</p>
+    <p id="priceDA_P", class="priceInvis", title="Price formula: 800*(25**UpgradeLevel)">800P (1/5)</p>
 </button>
 <button id="upgradeDB_P", class="upgrade", onclick="CB_P()">
-    <p id="titleDB_P", class="titleInvis">#7 - </p>
-    <p id="infoDB_P", class="infoInvis">Point gain speed +1x (Before they take 1s but <br>now it's 0.5s)</p>
+    <p id="titleDB_P", class="titleInvis">WIP</p>
+    <p id="infoDB_P", class="infoInvis">WIP</p>
     <p id="priceDB_P", class="priceInvis">50 Points</p>
 </button>
 <button id="upgradeDC_P", class="upgrade", onclick="CC_P()">
-    <p id="titleDC_P", class="titleInvis">#6a - More Points</p>
-    <p id="infoDC_P", class="infoInvis">+2 base points. Unlocks a good upgrade. Also makes #6b cost 10x more.</p>
-    <p id="priceDC_P", class="priceInvis">50 Points</p>
+    <p id="titleDC_P", class="titleInvis">WIP</p>
+    <p id="infoDC_P", class="infoInvis">WIP</p>
+    <p id="priceDC_P", class="priceInvis">WIP</p>
 </button>
 <button id="upgradeDD_P", class="upgrade">
     <p id="titleDD_P", class="titleInvis">WIP</p>
@@ -173,19 +174,19 @@
 <!-- sorry i forgot my "line" that time -->
 
 <button id="upgradeEA_P", class="upgrade", onclick="CA_P()">
-    <p id="titleEA_P", class="titleInvis">#5 - Double</p>
-    <p id="infoEA_P", class="infoInvis">*2 Point gain. The cool upgrades are coming soon! <br> CURRENT ENDGAME LOL</p>
-    <p id="priceEA_P", class="priceInvis">125P (0/1)</p>
+    <p id="titleEA_P", class="titleInvis">WIP</p>
+    <p id="infoEA_P", class="infoInvis">WIP</p>
+    <p id="priceEA_P", class="priceInvis">WIP</p>
 </button>
 <button id="upgradeEB_P", class="upgrade", onclick="CB_P()">
-    <p id="titleEB_P", class="titleInvis">#7 - </p>
-    <p id="infoEB_P", class="infoInvis">Point gain speed +1x (Before they take 1s but <br>now it's 0.5s)</p>
-    <p id="priceEB_P", class="priceInvis">50 Points</p>
+    <p id="titleEB_P", class="titleInvis">WIP</p>
+    <p id="infoEB_P", class="infoInvis">WIP</p>
+    <p id="priceEB_P", class="priceInvis">WIP</p>
 </button>
 <button id="upgradeEC_P", class="upgrade", onclick="CC_P()">
-    <p id="titleEC_P", class="titleInvis">#6a - More Points</p>
-    <p id="infoEC_P", class="infoInvis">+2 base points. Unlocks a good upgrade. Also makes #6b cost 10x more.</p>
-    <p id="priceEC_P", class="priceInvis">50 Points</p>
+    <p id="titleEC_P", class="titleInvis">WIP</p>
+    <p id="infoEC_P", class="infoInvis">WIP</p>
+    <p id="priceEC_P", class="priceInvis">WIP</p>
 </button>
 <button id="upgradeED_P", class="upgrade">
     <p id="titleED_P", class="titleInvis">WIP</p>
@@ -206,19 +207,19 @@
 <!-- the EVIL 6th line -->
 
 <button id="upgradeFA_P", class="upgrade", onclick="DA_P()">
-    <p id="titleFA_P", class="titleInvis">#5 - Double</p>
-    <p id="infoFA_P", class="infoInvis">*2 Point gain. The cool upgrades are coming soon! <br> CURRENT ENDGAME LOL</p>
-    <p id="priceFA_P", class="priceInvis">125P (0/1)</p>
+    <p id="titleFA_P", class="titleInvis">WIP</p>
+    <p id="infoFA_P", class="infoInvis">WIP</p>
+    <p id="priceFA_P", class="priceInvis">WIP</p>
 </button>
 <button id="upgradeFB_P", class="upgrade", onclick="CB_P()">
-    <p id="titleFB_P", class="titleInvis">#7 - </p>
-    <p id="infoFB_P", class="infoInvis">Point gain speed +1x (Before they take 1s but <br>now it's 0.5s)</p>
-    <p id="priceFB_P", class="priceInvis">50 Points</p>
+    <p id="titleFB_P", class="titleInvis">WIP</p>
+    <p id="infoFB_P", class="infoInvis">WIP</p>
+    <p id="priceFB_P", class="priceInvis">WIP</p>
 </button>
 <button id="upgradeFC_P", class="upgrade", onclick="CC_P()">
-    <p id="titleFC_P", class="titleInvis">#6a - More Points</p>
-    <p id="infoFC_P", class="infoInvis">+2 base points. Unlocks a good upgrade. Also makes #6b cost 10x more.</p>
-    <p id="priceFC_P", class="priceInvis">50 Points</p>
+    <p id="titleFC_P", class="titleInvis">WIP</p>
+    <p id="infoFC_P", class="infoInvis">WIP</p>
+    <p id="priceFC_P", class="priceInvis">WIP</p>
 </button>
 <button id="upgradeFD_P", class="upgrade">
     <p id="titleFD_P", class="titleInvis">WIP</p>
@@ -235,11 +236,216 @@
     <p id="infoFF_P", class="infoInvis">WIP</p>
     <p id="priceFF_P", class="priceInvis">WIP</p>
 </button>
+</div>
+ <!-- RESEARCH UPGRADES-->
+<div id="containerR">
+<!-- first line-->
 
+<button id="upgradeAA_R", class="upgradeBlue", onclick="AA_R()">
+    <p id="titleAA_R", class="titleBlue">#1R - Researching Points</p>
+    <p id="infoAA_R", class="infoBlue">+0.5x point gain.</p>
+    <p id="priceAA_R", class="priceBlue", title="Price formula: 1+Math.round(UpgradeLevel**3/10)">2RP (0/100)</p>
+</button>
+<button id="upgradeAB_R", class="upgradeBlue", onclick="AB_R()"">
+    <p id="titleAB_R", class="titleInvis">#2R - Re-searched</p>
+    <p id="infoAB_R", class="infoInvis">+0.25x RP gain. Starts at 1.75x.</p>
+    <p id="priceAB_R", class="priceInvis", title="Price formula: 3+Math.round(UpgradeLevel**4/50)">3RP (0/1000)</p>
+</button>
+<button id="upgradeAC_R", class="upgradeBlue", onclick="AC_R()">
+    <p id="titleAC_R", class="titleInvis">#5R - Big Multiplier</p>
+    <p id="infoAC_R", class="infoInvis">#8's boost (The 2**) is increased by 0.25. Better with #4R</p>
+    <p id="priceAC_R", class="priceInvis">60RP (0/1)</p>
+</button>
+<button id="upgradeAD_R", class="upgradeBlue", onclick="AD_R()">
+    <p id="titleAD_R", class="titleInvis">WIP</p>
+    <p id="infoAD_R", class="infoInvis">WIP</p>
+    <p id="priceAD_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeAE_R", class="upgradeBlue", onclick="AE_R()">
+    <p id="titleAE_R", class="titleInvis">WIP</p>
+    <p id="infoAE_R", class="infoInvis">WIP</p>
+    <p id="priceAE_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeAF_R", class="upgradeBlue", onclick="AF_R()">
+    <p id="titleAF_R", class="titleInvis">WIP</p>
+    <p id="infoAF_R", class="infoInvis">WIP</p>
+    <p id="priceAF_R", class="priceInvis">WIP</p>
+</button>
 
+<!-- second line-->
 
+<button id="upgradeBA_R", class="upgradeBlue", onclick="BA_R()">
+    <p id="titleBA_R", class="titleInvis">#3R - Head Start</p>
+    <p id="infoBA_R", class="infoInvis">Research resets give you 5**Level points to start with..</p>
+    <p id="priceBA_R", class="priceInvis", title="Price formula: 8*(5**UpgradeLevel)">8RP (0/10)</p>
+</button>
+<button id="upgradeBB_R", class="upgradeBlue", onclick="BB_R()">
+    <p id="titleBB_R", class="titleInvis">#4R - JACKPOT!!</p>
+    <p id="infoBB_R", class="infoInvis">*3 Luck for #8 (this translates to on average x1.4P</p>
+    <p id="priceBB_R", class="priceInvis", title="Price forumla: 25*(2**UpgradeLevel)">25RP (0/3)</p>
+</button>
+<button id="upgradeBC_R", class="upgradeBlue", onclick="BC_R()">
+    <p id="titleBC_R", class="titleInvis">#8R - Qol :D</p>
+    <p id="infoBC_R", class="infoInvis">#8's multiplier doesn't go down if worse than your best multipier, but /2 #8 luck.</p>
+    <p id="priceBC_R", class="priceInvis">400P (0/1)</p>
+</button>
+<button id="upgradeBD_R", class="upgradeBlue", onclick="BC_R()">
+    <p id="titleBD_R", class="titleInvis">#8 - Upgrade "tree" haha</p>
+    <p id="infoBD_R", class="infoInvis">Points are multiplied by log10(Research)/2</p>
+    <p id="priceBD_R", class="priceInvis">100kP (0/1)</p>
+</button>
+<button id="upgradeEE_R", class="upgradeBlue">
+    <p id="titleBE_R", class="titleInvis">WIP</p>
+    <p id="infoBE_R", class="infoInvis">WIP</p>
+    <p id="priceBE_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeBF_R", class="upgradeBlue">
+    <p id="titleBF_R", class="titleInvis">WIP</p>
+    <p id="infoBF_R", class="infoInvis">WIP</p>
+    <p id="priceBF_R", class="priceInvis">WIP</p>
+</button>
+
+<!-- third line-->
+
+<button id="upgradeCA_R", class="upgradeBlue", onclick="CA_R()">
+    <p id="titleCA_R", class="titleInvis">#7R - Compound</p>
+    <p id="infoCA_R", class="infoInvis">*2 Points gain compounding.</p>
+    <p id="priceCA_R", class="priceInvis", title="Price forumla: 50*(4**UpgradeLevel)">50RP (0/100)</p>
+</button>
+<button id="upgradeCB_R", class="upgradeBlue", onclick="CB_R()">
+    <p id="titleCB_R", class="titleInvis">#8R - Decay</p>
+    <p id="infoCB_R", class="infoInvis">*3 Points, but this multiplier lowers down to 1x within 1 minute.</p>
+    <p id="priceCB_R", class="priceInvis">200P (0/1)</p>
+</button>
+<button id="upgradeCC_R", class="upgradeBlue", onclick="CC_R()">
+    <p id="titleCC_R", class="titleInvis">#9R - Choices [PERMANENT]</p>
+    <p id="infoCC_R", class="infoInvis">Adds a few new point upgrades. Unlocks 2 research paths. Once buying one the other is locked.</p>
+    <p id="priceCC_R", class="priceInvis">1250RP (0/1)</p>
+</button>
+<button id="upgradeCD_R", class="upgradeBlue">
+    <p id="titleCD_R", class="titleInvis">WIP</p>
+    <p id="infoCD_R", class="infoInvis">WIP</p>
+    <p id="priceCD_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeCE_R", class="upgradeBlue">
+    <p id="titleCE_R", class="titleInvis">WIP</p>
+    <p id="infoCE_R", class="infoInvis">WIP</p>
+    <p id="priceCE_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeCF_R", class="upgradeBlue">
+    <p id="titleCF_R", class="titleInvis">WIP</p>
+    <p id="infoCF_R", class="infoInvis">WIP</p>
+    <p id="priceCF_R", class="priceInvis">WIP</p>
+</button>
+
+<!-- fourhthhrtrhthrhte line maybe -->
+
+<button id="upgradeDA_R", class="upgradeBlue", onclick="DA_R()">
+    <p id="titleDA_R", class="titleInvis">WIP?</p>
+    <p id="infoDA_R", class="infoInvis">WIP</p>
+    <p id="priceDA_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeDB_R", class="upgradeBlue", onclick="DB_R()">
+    <p id="titleDB_R", class="titleInvis">#7 - </p>
+    <p id="infoDB_R", class="infoInvis">WIP</p>
+    <p id="priceDB_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeDC_R", class="upgradeBlue", onclick="DC_R()">
+    <p id="titleDC_R", class="titleInvis">WIP</p>
+    <p id="infoDC_R", class="infoInvis">WIP</p>
+    <p id="priceDC_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeDD_R", class="upgradeBlue">
+    <p id="titleDD_R", class="titleInvis">WIP</p>
+    <p id="infoDD_R", class="infoInvis">WIP</p>
+    <p id="priceDD_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeDE_R", class="upgradeBlue">
+    <p id="titleDE_R", class="titleInvis">WIP</p>
+    <p id="infoDE_R", class="infoInvis">WIP</p>
+    <p id="priceDE_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeDF_R", class="upgradeBlue">
+    <p id="titleDF_R", class="titleInvis">WIP</p>
+    <p id="infoDF_R", class="infoInvis">WIP</p>
+    <p id="priceDF_R", class="priceInvis">WIP</p>
+</button>
+
+<!-- sorry i forgot my "line" that time -->
+
+<button id="upgradeEA_R", class="upgradeBlue", onclick="CA_R()">
+    <p id="titleEA_R", class="titleInvis">WIP</p>
+    <p id="infoEA_R", class="infoInvis">WIP</p>
+    <p id="priceEA_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeEB_R", class="upgradeBlue", onclick="CB_R()">
+    <p id="titleEB_R", class="titleInvis">WIP</p>
+    <p id="infoEB_R", class="infoInvis">WIP</p>
+    <p id="priceEB_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeEC_R", class="upgradeBlue", onclick="CC_R()">
+    <p id="titleEC_R", class="titleInvis">WIP</p>
+    <p id="infoEC_R", class="infoInvis">WIP</p>
+    <p id="priceEC_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeED_R", class="upgradeBlue">
+    <p id="titleED_R", class="titleInvis">WIP</p>
+    <p id="infoED_R", class="infoInvis">WIP</p>
+    <p id="priceED_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeEE_R", class="upgradeBlue">
+    <p id="titleEE_R", class="titleInvis">WIP</p>
+    <p id="infoEE_R", class="infoInvis">WIP</p>
+    <p id="priceEE_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeEF_R", class="upgradeBlue">
+    <p id="titleEF_R", class="titleInvis">WIP</p>
+    <p id="infoEF_R", class="infoInvis">WIP</p>
+    <p id="priceEF_R", class="priceInvis">WIP</p>
+</button>
+
+<!-- the EVIL 6th line -->
+
+<button id="upgradeFA_R", class="upgradeBlue", onclick="DA_R()">
+    <p id="titleFA_R", class="titleInvis">WIP</p>
+    <p id="infoFA_R", class="infoInvis">WIP</p>
+    <p id="priceFA_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeFB_R", class="upgradeBlue", onclick="CB_R()">
+    <p id="titleFB_R", class="titleInvis">WIP</p>
+    <p id="infoFB_R", class="infoInvis">WIP</p>
+    <p id="priceFB_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeFC_R", class="upgradeBlue", onclick="CC_R()">
+    <p id="titleFC_R", class="titleInvis">WIP</p>
+    <p id="infoFC_R", class="infoInvis">WIP</p>
+    <p id="priceFC_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeFD_R", class="upgradeBlue">
+    <p id="titleFD_R", class="titleInvis">WIP</p>
+    <p id="infoFD_R", class="infoInvis">WIP</p>
+    <p id="priceFD_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeFE_R", class="upgradeBlue">
+    <p id="titleFE_R", class="titleInvis">WIP</p>
+    <p id="infoFE_R", class="infoInvis">WIP</p>
+    <p id="priceFE_R", class="priceInvis">WIP</p>
+</button>
+<button id="upgradeFF_R", class="upgradeBlue">
+    <p id="titleFF_R", class="titleInvis">WIP</p>
+    <p id="infoFF_R", class="infoInvis">WIP</p>
+    <p id="priceFF_R", class="priceInvis">WIP</p>
+</button>
 </div>
 
+<p id="DevToolsBox">Dev tools below! Since this game is still wip im letting everyone use them</p>
+<button id="RESET", onclick="RESET()">RESET DATA</button>
+<button id="MOREPOINTS", onclick="MOREPOINTS()">X2 POINTS</button>
+
+
+
+<p id="pointdisplay", class="currenciesP"></p>
+<p id="researchdisplay", class="currenciesR"></p>
 
 <p id="infoBox">The very EVIL (perhance) info box <br><br>
 
@@ -247,12 +453,10 @@ If you're wondering why exponents are shown as **,<br>
 * and ^ are very similar when the text is small<br>
 so i just use the javascript method instead<br><br>
 
-Also you can zoom in and out using<br>
-Ctrl and + (zoom in), Ctrl and - (zoom out)<br>
-You can also do ctrl+Mousewheel but that might not work.<br><br>
 
-The game currently has 8 upgrades<br>
-(counting two paths like #6a and #6b as multiple)!!<br><br>
+
+The game currently has 18 upgrades<br>
+(counting two paths like #6a and #6b as multiple, and counting reset upgrades)!!<br><br>
 
 If you're a game dev and want to have a heart attack<br>
 go check the code for this :) i'm new at coding<br>
@@ -260,6 +464,8 @@ https://github.com/mathh0808/mathh0808.github.io<br><br>
 
 Ok this box is pretty long ill stop<br>
 </p>
+
+
 <script src="js.js"></script>
 </body>
 </html>
