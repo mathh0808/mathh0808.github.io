@@ -415,7 +415,7 @@ font-family: Ubuntu;
 
 
 
-.DevToolsBox {
+#DevToolsBox {
  font-size: 75%;
  text-align: center;
  background-color:#dddddd;
@@ -433,7 +433,7 @@ font-family: Ubuntu;
 }
 
 
-.RESET {
+#RESET {
  font-size: 80%;
  text-align: center;
  background-color:#dddddd;
@@ -452,7 +452,7 @@ font-family: Ubuntu;
 }
 
 
-.MOREPOINTS {
+#MOREPOINTS {
  font-size: 80%;
  text-align: center;
  background-color:#dddddd;
