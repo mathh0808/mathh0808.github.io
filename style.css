@@ -506,9 +506,9 @@ font-family: Ubuntu;
 
 
 .currenciesP {
- font-size: 120%;
- width: 150px;
- height: 18px;
+ font-size: 125%;
+ width: 200px;
+ height: 20px;
  text-align: center;
  background-color:#bbbbbb;
  border-radius: 12px;
@@ -524,9 +524,9 @@ font-family: Ubuntu;
  border-style:outset;
 }
 .currenciesR {
- font-size: 120%;
- width: 150px;
- height: 18px;
+ font-size: 125%;
+ width: 200px;
+ height: 20px;
  text-align: center;
  background-color:#b8dde2;
  border-radius: 12px;
