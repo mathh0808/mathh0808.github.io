@@ -43,6 +43,13 @@ if (PointUpgrades == 1) {
 }
 
 
+let randomNumberSuffix = 1;
+if (localStorage.getItem("RandomNumber") !== null) {
+PointUpgrades[2][1] = JSON.parse(localStorage.getItem("RandomNumber"));
+}
+else {
+PointUpgrades[2][1] = Qd15
+}
 
 
 
@@ -76,11 +83,6 @@ ResearchUpgrades = JSON.parse(localStorage.getItem("ResearchUpgrades"));
 if (ResearchUpgrades == 1) {
     ResearchUpgrades= [ResearchUpgradesA, ResearchUpgradesB, ResearchUpgradesC, ResearchUpgradesD, ResearchUpgradesE, ResearchUpgradesF];
 }
-
-
-
-let AB_Price = 1;
-
 
 
 let pointsAlt = 0;
@@ -117,8 +119,18 @@ if (localStorage.getItem("timeSinceR") !== null) {
 timeSinceR = JSON.parse(localStorage.getItem("timeSinceR"));
 }
 
+let UIsize = 100;
+
+if (localStorage.getItem("UIsize") !== null) {
+UIsize = JSON.parse(localStorage.getItem("UIsize"));
+}
+
+
 let SuffixTransferValue = [0, 0, 0, 0, 0, 0];
 let SuffixValue = [0, 0, 0, 0, 0, 0];
+
+console.log("Uhhh what's the point of going in logs rn? you have buttons to get exponentially more points...");
+
 
 
 // EVERY FRAME FUNCTION
@@ -133,14 +145,14 @@ PointUpgradesCost[0][4] = 0
 PointUpgradesCost[0][5] = 0
 
 PointUpgradesCost[1][0] = 15
-PointUpgradesCost[1][1] = Math.round((points/5000)**0.5)
+PointUpgradesCost[1][1] = Math.round(Math.max(((points/7500)**0.6*researchTotal), 3)*100)/100
 PointUpgradesCost[1][2] = 200*(PointUpgrades[0][3]*19+1)
 PointUpgradesCost[1][3] = 250000
 PointUpgradesCost[1][4] = 0
 PointUpgradesCost[1][5] = 0
 
 PointUpgradesCost[2][0] = 125
-PointUpgradesCost[2][1] = Math.round((2+ResearchUpgrades[0][2]*0.25)**(10-Math.log10(PointUpgrades[2][1]))/(2+ResearchUpgrades[0][2]*0.25)*100)/100
+PointUpgradesCost[2][1] = Math.round((2+ResearchUpgrades[0][2]*0.25)**(16-Math.log10(PointUpgrades[2][1]))/(2+ResearchUpgrades[0][2]*0.25)*100)/100
 PointUpgradesCost[2][2] = 0
 PointUpgradesCost[2][3] = 750000*(3.75**PointUpgrades[2][3])
 PointUpgradesCost[2][4] = 0
@@ -169,21 +181,21 @@ PointUpgradesCost[5][5] = 0
 
 researchGain = PointUpgradesCost[1][1]
 
-ResearchUpgradesCost[0][0] = 1+Math.round((ResearchUpgrades[0][0]**3)/10);
-ResearchUpgradesCost[0][1] = 3+Math.round((ResearchUpgrades[0][1]**4)/50);
+ResearchUpgradesCost[0][0] = 1+Math.round((ResearchUpgrades[0][0]**2.5)/20);
+ResearchUpgradesCost[0][1] = 3+Math.round((ResearchUpgrades[0][1]**3.5)/50);
 ResearchUpgradesCost[0][2] = 60
 ResearchUpgradesCost[0][3] = 0
 ResearchUpgradesCost[0][4] = 0
 ResearchUpgradesCost[0][5] = 0
 
-ResearchUpgradesCost[1][0] = 8*(5**ResearchUpgrades[1][0])
-ResearchUpgradesCost[1][1] = 25*(2**ResearchUpgrades[1][1])
-ResearchUpgradesCost[1][2] = 400
+ResearchUpgradesCost[1][0] = 3*(10**ResearchUpgrades[1][0])
+ResearchUpgradesCost[1][1] = 10*(3**ResearchUpgrades[1][1])
+ResearchUpgradesCost[1][2] = 600
 ResearchUpgradesCost[2][3] = 0
 ResearchUpgradesCost[1][4] = 0
 ResearchUpgradesCost[1][5] = 0
 
-ResearchUpgradesCost[2][0] = 50*(4**ResearchUpgrades[2][0])
+ResearchUpgradesCost[2][0] = 15*(8**ResearchUpgrades[2][0])
 ResearchUpgradesCost[2][1] = 250
 ResearchUpgradesCost[2][2] = 0
 ResearchUpgradesCost[2][3] = 0
@@ -217,7 +229,8 @@ ResearchUpgradesCost[5][5] = 0
 pointsBase = 1 + (PointUpgrades[0][1]*(1+PointUpgrades[0][2]/2));
 
 pointsMult = Math.round(1 * (1+0.5*PointUpgrades[1][0])
-* (1+PointUpgrades[2][0]) * (1+PointUpgrades[1][2]*2)
+* (1+PointUpgrades[2][0]) 
+* (1+PointUpgrades[1][2]*1.25)
 * Math.max(PointUpgrades[1][3]*(Math.log10((1+research)**(1/Math.log10(10-PointUpgrades[2][3])))+1), 1)
 * Math.max(PointUpgradesCost[2][1], 1)
 * (1+(ResearchUpgrades[0][0]/2))
@@ -230,9 +243,9 @@ pointsExp = 1 + (0.04*PointUpgrades[3][0]) ;
 pointsTotal = Math.round(PointUpgrades[0][0]*(pointsBase*pointsMult)**pointsExp*10)/10;
 
 //research calculation
-researchBase = PointUpgradesCost[1][1];
+researchBase = 1;
 researchMult = (1+(ResearchUpgrades[0][1]/4)+Math.min(ResearchUpgrades[0][1], 1)/2)
-researchTotal = Math.max(Math.round((researchBase*researchMult)**researchExp*100)/100, 3);
+researchTotal = (researchBase*researchMult)**researchExp;
 
 
 
@@ -269,10 +282,10 @@ switch(true) {
         PointUpgradesSuffix[i][ii] = (Math.round(PointUpgradesCost[i][ii]/B9/10)/100)+"T";
         break;
     case PointUpgradesCost[i][ii] >= B9:
-        PointUpgradesSuffix[i][ii] = (Math.round(PointUpgradesCost[i][ii]/M6/10)/100)+"B";
+        PointUpgradesSuffix[i][ii] = (Math.round(PointUpgradesCost[i][ii]/M6/10)/100)+"b";
         break;
     case PointUpgradesCost[i][ii] >= M6:
-        PointUpgradesSuffix[i][ii] = (Math.round(PointUpgradesCost[i][ii]/10000)/100)+"M";
+        PointUpgradesSuffix[i][ii] = (Math.round(PointUpgradesCost[i][ii]/10000)/100)+"m";
         break;
     case PointUpgradesCost[i][ii] >= 1000:
         PointUpgradesSuffix[i][ii] = Math.round(PointUpgradesCost[i][ii]/10)/100+"k";
@@ -313,10 +326,10 @@ switch(true) {
         ResearchUpgradesSuffix[i][ii] = (Math.round(ResearchUpgradesCost[i][ii]/B9/10)/100)+"T";
         break;
     case ResearchUpgradesCost[i][ii] >= B9:
-        ResearchUpgradesSuffix[i][ii] = (Math.round(ResearchUpgradesCost[i][ii]/M6/10)/100)+"B";
+        ResearchUpgradesSuffix[i][ii] = (Math.round(ResearchUpgradesCost[i][ii]/M6/10)/100)+"b";
         break;
     case ResearchUpgradesCost[i][ii] >= M6:
-        ResearchUpgradesSuffix[i][ii] = (Math.round(ResearchUpgradesCost[i][ii]/10000)/100)+"M";
+        ResearchUpgradesSuffix[i][ii] = (Math.round(ResearchUpgradesCost[i][ii]/10000)/100)+"m";
         break;
     case ResearchUpgradesCost[i][ii] >= 1000:
         ResearchUpgradesSuffix[i][ii] = Math.round(ResearchUpgradesCost[i][ii]/10)/100+"k";
@@ -327,9 +340,9 @@ switch(true) {
 
 
 
-SuffixTransferValue = [points, pointsBase, pointsMult, pointsTotal, research, researchTotal];
+SuffixTransferValue = [points, pointsBase, pointsMult, pointsTotal, PointUpgrades[2][1], research, PointUpgradesCost[1][1]];
 // ALL SUFFIX THINGY
-for (let i = 0; i <= 5; i++) {``
+for (let i = 0; i <= 6; i++) {``
 switch(true) {
     case SuffixTransferValue[i] >= EXP36:
         SuffixValue[i] = (Math.round(SuffixTransferValue[i]/10**Math.round(Math.log10(SuffixTransferValue[i])-3.5))/1000)+"e+"+(Math.round(Math.log10(SuffixTransferValue[i])-0.5));
@@ -359,10 +372,10 @@ switch(true) {
         SuffixValue[i] = (Math.round(SuffixTransferValue[i]/B9/10)/100)+"T";
         break;
     case SuffixTransferValue[i] >= B9:
-        SuffixValue[i] = (Math.round(SuffixTransferValue[i]/M6/10)/100)+"B";
+        SuffixValue[i] = (Math.round(SuffixTransferValue[i]/M6/10)/100)+"b";
         break;
     case SuffixTransferValue[i] >= M6:
-        SuffixValue[i] = (Math.round(SuffixTransferValue[i]/10000)/100)+"M";
+        SuffixValue[i] = (Math.round(SuffixTransferValue[i]/10000)/100)+"m";
         break;
     case SuffixTransferValue[i] >= 1000:
         SuffixValue[i] = Math.round(SuffixTransferValue[i]/10)/100+"k";
@@ -379,10 +392,14 @@ if (points < 1000) {
 pointsBaseSuffix = SuffixValue[1]
 pointsMultSuffix = SuffixValue[2]
 pointsTotalSuffix = SuffixValue[3]
-researchSuffix = SuffixValue[4]
-researchTotalSuffix = SuffixValue[5]
-if (researchTotal < 1000) {
-    researchTotalSuffix = Math.round(researchTotal*100)/100;
+randomNumberSuffix = SuffixValue[4]
+researchSuffix = SuffixValue[5]
+if (research < 1000) {
+    researchSuffix = Math.round(research*100)/100;
+}
+researchTotalSuffix = SuffixValue[6]
+if (PointUpgradesCost[1][1] < 1000) {
+    researchTotalSuffix = Math.round(PointUpgradesCost[1][1]*100)/100;
 }
 
 
@@ -436,9 +453,9 @@ else {
     document.getElementById("titleBA_P").className = "title" ;
     document.getElementById("infoBA_P").className = "info" ;
     document.getElementById("priceBA_P").className = "price" ;
-    document.getElementById("pointGainB").textContent = ("(("+pointsBaseSuffix+" [Base] *"+pointsMultSuffix+")**"+pointsExp+")/25 every 40ms");
-    document.getElementById("priceAB_P").textContent = PointUpgradesSuffix[0][1] + "P (" + PointUpgrades[0][1] + "/" + (3+PointUpgrades[0][3]*12) + ")";
-    document.getElementById("priceBA_P").textContent = "15P ("+PointUpgrades[1][0]+"/1)";
+    document.getElementById("pointGainB").textContent = ("(("+pointsBaseSuffix+" [Base] x"+pointsMultSuffix+")^"+pointsExp+")/25 every 40ms");
+    document.getElementById("priceAB_P").textContent = PointUpgradesSuffix[0][1] + " P (" + PointUpgrades[0][1] + "/" + (3+PointUpgrades[0][3]*12) + ")";
+    document.getElementById("priceBA_P").textContent = "15 P ("+PointUpgrades[1][0]+"/1)";
     document.getElementById("infoAB_P").textContent = "+" + (1+PointUpgrades[0][2]/2) + " base point gain. Unlocks something below later!";
 }
 
@@ -455,7 +472,7 @@ else {
     document.getElementById("infoAC_P").className = "info" ;
     document.getElementById("infoAC_P").title = "Adds " + (PointUpgrades[0][2]*0.5) + " to the #2 boost.";
     document.getElementById("priceAC_P").className = "price" ;
-    document.getElementById("priceAC_P").textContent = PointUpgradesSuffix[0][2]+"P ("+PointUpgrades[0][2]+"/5)";
+    document.getElementById("priceAC_P").textContent = PointUpgradesSuffix[0][2]+" P ("+PointUpgrades[0][2]+"/5)";
 }
 
 // AB TO BB
@@ -465,10 +482,10 @@ if (PointUpgrades[0][1] >= 15 || researchDone == true) {
     document.getElementById("infoBB_P").className = "infoBlue" ;
     document.getElementById("priceBB_P").className = "priceBlue" ;
     if (points >= 12500) {
-    document.getElementById("priceBB_P").textContent = researchTotalSuffix+" RP";
+    document.getElementById("priceBB_P").textContent = researchTotalSuffix  +" RP";
     }
     else {
-    document.getElementById("priceBB_P").textContent = "Requires 12.5kP!";
+    document.getElementById("priceBB_P").textContent = "Requires 12.5k P!";
     }}
     else {
     document.getElementById("upgradeBB_P").className = "upgradeInvis" ;
@@ -499,8 +516,31 @@ else {
     document.getElementById("titleBC_P").className = "title" ;
     document.getElementById("infoBC_P").className = "info" ;
     document.getElementById("priceBC_P").className = "price" ;
-    document.getElementById("priceAD_P").textContent = PointUpgradesSuffix[0][3]+"P ("+PointUpgrades[0][3]+"/1)";
-    document.getElementById("priceBC_P").textContent = PointUpgradesSuffix[1][2]+"P ("+PointUpgrades[1][2]+"/1)";
+    document.getElementById("priceAD_P").textContent = PointUpgradesSuffix[0][3]+" P ("+PointUpgrades[0][3]+"/1)";
+    document.getElementById("priceBC_P").textContent = PointUpgradesSuffix[1][2]+" P ("+PointUpgrades[1][2]+"/1)";
+}
+
+// AD to AE
+if (PointUpgrades[0][3] == 0) {
+    document.getElementById("upgradeAE_P").className = "upgradeInvis" ;
+    document.getElementById("titleAE_P").className = "titleInvis" ;
+    document.getElementById("infoAE_P").className = "infoInvis" ;
+    document.getElementById("priceAE_P").className = "priceInvis" ;
+    }
+else {
+    document.getElementById("upgradeAE_P").className = "upgrade" ;
+    document.getElementById("titleAE_P").className = "title" ;
+    document.getElementById("infoAE_P").className = "info" ;
+    document.getElementById("priceAE_P").className = "price" ;
+    if (ResearchUpgrades[2][2] == 0) {
+    document.getElementById("infoAE_P").textContent = "Locked! Buy #9R to unlock this.";
+    document.getElementById("priceAE_P").textContent = "LOCKED";
+    }
+    else {
+    document.getElementById("infoAE_P").title = "Multiples point gain by x"+(1+PointUpgrades[0][1]/100)+".";
+    document.getElementById("infoAE_P").textContent = "+35 TO #2's MAX!!! As a bonus, +0.01x base P per #2 level!!";
+    document.getElementById("priceAE_P").textContent = "275B P ("+PointUpgrades[0][4]+"/1)";
+    }
 }
 
 // AD & BC to BD
@@ -509,8 +549,8 @@ if (PointUpgrades[0][3] == 1 && PointUpgrades[1][2] == 1) {
     document.getElementById("titleBD_P").className = "title" ;
     document.getElementById("infoBD_P").className = "info" ;
     document.getElementById("priceBD_P").className = "price" ;
-    document.getElementById("infoBD_P").title = "Multiplies point gain by: "+ Math.round(Math.max(PointUpgrades[1][3]*(Math.log10((1+research)**(1/Math.log10(10-PointUpgrades[2][3])))+1), 1)*100)/100+".";
-    document.getElementById("priceBD_P").textContent = PointUpgradesSuffix[1][3]+"P ("+PointUpgrades[1][3]+"/1)";
+    document.getElementById("infoBD_P").title = "Multiplies point gain by: "+ Math.round(Math.max((Math.log10((1+research)**(1/Math.log10(10-PointUpgrades[2][3])))+1), 1)*100)/100+".";
+    document.getElementById("priceBD_P").textContent = PointUpgradesSuffix[1][3]+" P ("+PointUpgrades[1][3]+"/1)";
     }
 else {
     document.getElementById("upgradeBD_P").className = "upgradeInvis" ;
@@ -531,7 +571,7 @@ else {
     document.getElementById("titleCA_P").className = "title" ;
     document.getElementById("infoCA_P").className = "info" ;
     document.getElementById("priceCA_P").className = "price" ;
-    document.getElementById("priceCA_P").textContent = "125P ("+PointUpgrades[2][0]+"/1)";
+    document.getElementById("priceCA_P").textContent = "125 P ("+PointUpgrades[2][0]+"/1)";
 }
 // BD to CD
 if (PointUpgrades[1][3] == 1) {
@@ -539,7 +579,7 @@ if (PointUpgrades[1][3] == 1) {
     document.getElementById("titleCD_P").className = "title" ;
     document.getElementById("infoCD_P").className = "info" ;
     document.getElementById("priceCD_P").className = "price" ;
-    document.getElementById("priceCD_P").textContent = PointUpgradesSuffix[2][3]+"P ("+PointUpgrades[2][3]+"/7)";
+    document.getElementById("priceCD_P").textContent = PointUpgradesSuffix[2][3]+" P ("+PointUpgrades[2][3]+"/7)";
     document.getElementById("infoCD_P").title = "-" + PointUpgrades[2][3] + " to the log effect of #9.";
     }
 else {
@@ -564,19 +604,66 @@ if (PointUpgrades[2][0] == 0) {
 else {
     document.getElementById("upgradeCB_P").className = "upgrade" ;
     document.getElementById("titleCB_P").className = "title" ;
-    document.getElementById("infoCB_P").className = "info" ;
+    document.getElementById("infoCB_P").className = "info" ;    
     document.getElementById("priceCB_P").className = "price" ;
-    document.getElementById("infoCB_P").title = "Number Generated: "+PointUpgrades[2][1]+". Check price info for more";
-    document.getElementById("priceCB_P").title = "Multiplier formula: "+(2+(ResearchUpgrades[0][2]*0.25))+"**(10-Math.log10(RandomNumber))/2";
-    document.getElementById("priceCB_P").textContent = "25kP (*" + PointUpgradesSuffix[2][1] + "P)";
+    document.getElementById("infoCB_P").title = "Number Generated: "+randomNumberSuffix+". Check price info for more";
+    document.getElementById("priceCB_P").title = "Multiplier formula: "+(2+(ResearchUpgrades[0][2]*0.25))+"^(10-Math.log10(RandomNumber))/2";
+    document.getElementById("priceCB_P").textContent = "25k P (x" + PointUpgradesSuffix[2][1] + " P)";
 
     document.getElementById("upgradeDA_P").className = "upgrade" ;
     document.getElementById("titleDA_P").className = "title" ;
     document.getElementById("infoDA_P").className = "info" ;
     document.getElementById("infoDA_P").title = "Adds " + (PointUpgrades[3][0]*0.04) + " to the exponent.";
     document.getElementById("priceDA_P").className = "price" ;
-    document.getElementById("priceDA_P").textContent = PointUpgradesSuffix[3][0] + "P (" + PointUpgrades[3][0] + "/5)";
+    document.getElementById("priceDA_P").textContent = PointUpgradesSuffix[3][0] + " P (" + PointUpgrades[3][0] + "/5)";
 }
+
+// CB to CC
+if (PointUpgrades[2][1] == 0) {
+    document.getElementById("upgradeCC_P").className = "upgradeInvis" ;
+    document.getElementById("titleCC_P").className = "titleInvis" ;
+    document.getElementById("infoCC_P").className = "infoInvis" ;
+    document.getElementById("priceCC_P").className = "priceInvis" ;
+    }
+else {
+    document.getElementById("upgradeCC_P").className = "upgrade" ;
+    document.getElementById("titleCC_P").className = "title" ;
+    document.getElementById("infoCC_P").className = "info" ;
+    document.getElementById("priceCC_P").className = "price" ;
+    if (ResearchUpgrades[2][2] == 0) {
+    document.getElementById("infoCC_P").textContent = "Locked! Buy #9R to unlock this.";
+    document.getElementById("priceCC_P").textContent = "LOCKED";
+    }
+    else {
+    document.getElementById("infoCC_P").title = "Multiples point gain by x"+(1+PointUpgrades[0][1]/100)+".";
+    document.getElementById("infoCC_P").textContent = "+35 TO #2's MAX!!! As a bonus, +0.01x base P per #2 level!!";
+    document.getElementById("priceCC_P").textContent = "275B P ("+PointUpgrades[0][4]+"/1)";
+    }
+}
+
+// CD to CE
+if (PointUpgrades[2][3] == 0) {
+    document.getElementById("upgradeCC_P").className = "upgradeInvis" ;
+    document.getElementById("titleCC_P").className = "titleInvis" ;
+    document.getElementById("infoCC_P").className = "infoInvis" ;
+    document.getElementById("priceCC_P").className = "priceInvis" ;
+    }
+else {
+    document.getElementById("upgradeCC_P").className = "upgrade" ;
+    document.getElementById("titleCC_P").className = "title" ;
+    document.getElementById("infoCC_P").className = "info" ;
+    document.getElementById("priceCC_P").className = "price" ;
+    if (ResearchUpgrades[2][2] == 0) {
+    document.getElementById("infoCC_P").textContent = "Locked! Buy #9R to unlock this.";
+    document.getElementById("priceCC_P").textContent = "LOCKED";
+    }
+    else {
+    document.getElementById("infoCC_P").title = "Multiples point gain by x"+(1+PointUpgrades[0][1]/100)+".";
+    document.getElementById("infoCC_P").textContent = "+35 TO #2's MAX!!! As a bonus, +0.01x base P per #2 level!!";
+    document.getElementById("priceCC_P").textContent = "275B P ("+PointUpgrades[0][4]+"/1)";
+    }
+}
+
 
 
 
@@ -587,7 +674,7 @@ if(true) {
 
     // BB (P) TO AA
     if (researchDone == true) {
-        document.getElementById("priceAA_R").textContent = ResearchUpgradesSuffix[0][0]+"RP ("+ResearchUpgrades[0][0]+"/100)";
+        document.getElementById("priceAA_R").textContent = ResearchUpgradesSuffix[0][0]+" RP ("+ResearchUpgrades[0][0]+"/100)";
         document.getElementById("infoAA_R").title = "Multiplies point gain by " + (1+(ResearchUpgrades[0][0]*0.5)) + ".";
     }
 
@@ -609,14 +696,14 @@ if(true) {
         document.getElementById("infoAB_R").className = "infoBlue" ;
         document.getElementById("infoAB_R").title = "Multiplies research gain by " + (1+(ResearchUpgrades[0][1]/4)+Math.min(ResearchUpgrades[0][1], 1)/2) + ".";
         document.getElementById("priceAB_R").className = "priceBlue" ;
-        document.getElementById("priceAB_R").textContent = ResearchUpgradesSuffix[0][1]+"P ("+ResearchUpgrades[0][1]+"/200)";
+        document.getElementById("priceAB_R").textContent = ResearchUpgradesSuffix[0][1]+" RP ("+ResearchUpgrades[0][1]+"/200)";
 
         document.getElementById("upgradeBA_R").className = "upgradeBlue" ;
         document.getElementById("titleBA_R").className = "titleBlue" ;
         document.getElementById("infoBA_R").className = "infoBlue" ;
-        document.getElementById("infoBA_R").title = "Gives you " + (5**ResearchUpgrades[1][0]) + "P to start with.";
+        document.getElementById("infoBA_R").title = "Gives you " + (10*(5**ResearchUpgrades[1][0])*Math.min(ResearchUpgrades[1][0], 1)) + "P to start with.";
         document.getElementById("priceBA_R").className = "priceBlue" ;
-        document.getElementById("priceBA_R").textContent = ResearchUpgradesSuffix[1][0]+"P ("+ResearchUpgrades[1][0]+"/10)";
+        document.getElementById("priceBA_R").textContent = ResearchUpgradesSuffix[1][0]+" RP ("+ResearchUpgrades[1][0]+"/10)";
     }
 
     // AB to AC
@@ -631,7 +718,7 @@ if(true) {
         document.getElementById("titleAC_R").className = "titleBlue" ;
         document.getElementById("infoAC_R").className = "infoBlue" ;
         document.getElementById("priceAC_R").className = "priceBlue" ;
-        document.getElementById("priceAC_R").textContent = ResearchUpgradesSuffix[0][2]+"P ("+ResearchUpgrades[0][2]+"/1)";
+        document.getElementById("priceAC_R").textContent = ResearchUpgradesSuffix[0][2]+" RP ("+ResearchUpgrades[0][2]+"/1)";
     }
 
     // BA to BB & CA
@@ -651,14 +738,14 @@ if(true) {
         document.getElementById("titleBB_R").className = "titleBlue" ;
         document.getElementById("infoBB_R").className = "infoBlue" ;
         document.getElementById("priceBB_R").className = "priceBlue" ;
-        document.getElementById("priceBB_R").textContent = ResearchUpgradesSuffix[1][1]+"P ("+ResearchUpgrades[1][1]+"/3)";
+        document.getElementById("priceBB_R").textContent = ResearchUpgradesSuffix[1][1]+" RP ("+ResearchUpgrades[1][1]+"/3)";
         document.getElementById("infoBB_R").title = "Multiplies #8 luck by " + 3**ResearchUpgrades[1][1];
         
         document.getElementById("upgradeCA_R").className = "upgradeBlue" ;
         document.getElementById("titleCA_R").className = "titleBlue" ;
         document.getElementById("infoCA_R").className = "infoBlue" ;
         document.getElementById("priceCA_R").className = "priceBlue" ;
-        document.getElementById("priceCA_R").textContent = ResearchUpgradesSuffix[2][0]+"P ("+ResearchUpgrades[2][0]+"/99)";
+        document.getElementById("priceCA_R").textContent = ResearchUpgradesSuffix[2][0]+" RP ("+ResearchUpgrades[2][0]+"/99)";
         document.getElementById("infoCA_R").title = "Multiplies point gain by " + 2**ResearchUpgrades[2][0];
     }
         
@@ -679,18 +766,18 @@ if(true) {
         document.getElementById("titleBC_R").className = "titleBlue" ;
         document.getElementById("infoBC_R").className = "infoBlue" ;
         document.getElementById("priceBC_R").className = "priceBlue" ;
-        document.getElementById("priceBC_R").textContent = ResearchUpgradesSuffix[1][2]+"P ("+ResearchUpgrades[1][2]+"/1)";
+        document.getElementById("priceBC_R").textContent = ResearchUpgradesSuffix[1][2]+" RP ("+ResearchUpgrades[1][2]+"/1)";
         
         document.getElementById("upgradeCB_R").className = "upgradeBlue" ;
         document.getElementById("titleCB_R").className = "titleBlue" ;
         document.getElementById("infoCB_R").className = "infoBlue" ;
         document.getElementById("priceCB_R").className = "priceBlue" ;
-        document.getElementById("priceCB_R").textContent = ResearchUpgradesSuffix[2][1]+"P ("+ResearchUpgrades[2][1]+"/1)";
+        document.getElementById("priceCB_R").textContent = ResearchUpgradesSuffix[2][1]+" RP ("+ResearchUpgrades[2][1]+"/1)";
     }
 }
 
 
-}, 1);
+}, 3);
 
 
 
@@ -698,6 +785,9 @@ if(true) {
 setInterval(function(){
     points += pointsTotal/25;
     timeSinceR += 40000;
+
+document.querySelector(":root").style.setProperty("--UIsize", (UIsize)+"px");
+
 }, 40);
 
 
@@ -709,7 +799,9 @@ setInterval(function(){
     localStorage.setItem("ResearchDone", JSON.stringify(researchDone));
     localStorage.setItem("ResearchUpgrades", JSON.stringify(ResearchUpgrades));
     localStorage.setItem("timeSinceR", JSON.stringify(timeSinceR));
-}, 15000);
+    localStorage.setItem("UIsize", JSON.stringify(UIsize));
+    localStorage.setItem("RandomNumber", JSON.stringify(PointUpgrades[2][1]));
+}, 5000);
 
 
 
@@ -787,10 +879,10 @@ function CB_P() {
     if (points >= 25000) {
         points -= 25000;
         if (ResearchUpgrades[1][2] == 0) {
-            PointUpgrades[2][1] = Math.round(Math.random()*899999998/(3**ResearchUpgrades[1][1])+"");
+            PointUpgrades[2][1] = Math.round(Math.random()*899999999999998/(2**ResearchUpgrades[1][1])+2);
         }
         else {
-            PointUpgrades[2][1] = Math.round(Math.min(Math.random()*899999998/(3**ResearchUpgrades[1][1])*(1+ResearchUpgrades[1][2])+2, PointUpgrades[2][1]));
+            PointUpgrades[2][1] = Math.round(Math.min(Math.random()*899999999999998/(2**ResearchUpgrades[1][1])*(1+ResearchUpgrades[1][2])+2, PointUpgrades[2][1]*1.004));
         }
     }
 }
@@ -822,14 +914,14 @@ function DA_P() {
 
 function R() {
     if (points >= 12500) {
-    research += researchTotal
+    research += PointUpgradesCost[1][1]
     researchDone = true;
         for (let i = 0; i <= 5; i++) {
         for (let ii = 0; ii <= 5; ii++) {
         PointUpgrades[i][ii] = 0
         }}
-    PointUpgrades[2][1] = 1000000000
-    points = (5**ResearchUpgrades[1][0])*Math.min(ResearchUpgrades[1][0], 1);
+    PointUpgrades[2][1] = Qd15
+    points = 10*(5**ResearchUpgrades[1][0])*Math.min(ResearchUpgrades[1][0], 1);
     }
     timeSinceR = 1;
 }
@@ -898,7 +990,7 @@ function CA_R() {
 }
 
 function CB_R() {
-    if (research >= ResearchUpgradesCost[1][2]) {
+    if (research >= ResearchUpgradesCost[2][1]) {
         if (ResearchUpgrades[2][1] <= 0) {
         research -= ResearchUpgradesCost[2][1];
         ResearchUpgrades[2][1] = 1;
@@ -923,7 +1015,7 @@ function RESET() {
     for (let ii = 0; ii <= 5; ii++) {
     PointUpgrades[i][ii] = 0
     }}
-    PointUpgrades[2][1] = 1000000000
+    PointUpgrades[2][1] = 1000000000000000
     for (let i = 0; i <= 5; i++) {
     for (let ii = 0; ii <= 5; ii++) {
     ResearchUpgrades[i][ii] = 0
@@ -935,4 +1027,10 @@ function RESET() {
 
 function MOREPOINTS() {
     points *= 2;
+}
+
+
+
+function UIchange() {
+    UIsize = Number(document.getElementById("UIsizeOption").value);
 }
