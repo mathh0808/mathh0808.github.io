@@ -1,3 +1,7 @@
+:root {
+  --UIsize: 100px;
+}
+
 body {
  background-color: #000000;
  align-items: center;
@@ -11,71 +15,65 @@ body {
   background-size: 84.85px 84.85px;
 font-family: Ubuntu;
 
-#pointTotal {
- font-size: 270%;
- text-align: center;
- background-color:#dddddd;
- width: 720px;
- margin: auto;
- margin-top: 12px;
- border-radius: 10000px;
- border-color: #444444;
- border-width: 8px;
- border-style:solid;
- padding: 12px;
- user-select: none;
- }
-
-#pointGain {
- font-size: 156%;
- text-align: center;
- background-color:#dddddd;
- width: 600px;
- margin: auto;
- margin-top: 12px;
- border-radius: 10000px;
- border-color: #444444;
- border-width: 8px;
- border-style:solid;
- padding: 12px;
- user-select: none;
- border-style:double;
-}
-
-
-#pointGainB {
- font-size: 120%;
- text-align: center;
- background-color:#dddddd;
- width: 480px;
- margin: auto;
- margin-top: 12px;
- border-radius: 10000px;
- border-color: #444444;
- border-width:8px;
- border-style:solid;
- padding: 12px;
- user-select: none;
- border-style:double;
-}
-
 
 #NiceInfoBox {
- font-size: 72%;
+ font-size: calc(var(--UIsize) / 100px * 72%);
  text-align: center;
  background-color:#dddddd;
- width: 360px;
+ width: calc(var(--UIsize) / 100px * 360px);
  margin: auto;
- margin-top: 12px;
- border-radius: 10000px;
+ margin-top: calc(var(--UIsize) / 100px * 12px);
+ border-radius: calc(var(--UIsize) / 100px * 10000px);
  border-color: #444444;
- border-width:8px;
+ border-width: calc(var(--UIsize) / 100px * 8px);
  border-style:solid;
- padding: 12px;
+ padding: calc(var(--UIsize) / 100px * 12px);
  user-select: none;
  border-style:double;
 }
-
+#pointGainB {
+ font-size: calc(var(--UIsize) / 100px * 120%);
+ text-align: center;
+ background-color:#dddddd;
+ width: calc(var(--UIsize) / 100px * 480px);
+ margin: auto;
+ margin-top: calc(var(--UIsize) / 100px * 12px);
+ border-radius: calc(var(--UIsize) / 100px * 10000px);
+ border-color: #444444;
+ border-width: calc(var(--UIsize) / 100px * 8px);
+ border-style:solid;
+ padding: calc(var(--UIsize) / 100px * 12px); 
+ border-style:double;
+}
+#pointGain {
+ font-size: calc(var(--UIsize) / 100px * 156%);
+ text-align: center;
+ background-color:#dddddd;
+ width: calc(var(--UIsize) / 100px * 600px);
+ margin: auto;
+ margin-top: calc(var(--UIsize) / 100px * 12px);
+ border-radius: calc(var(--UIsize) / 100px * 10000px);
+ border-color: #444444;
+ border-width: calc(var(--UIsize) / 100px * 8px);
+ border-style:solid;
+ padding: calc(var(--UIsize) / 100px * 12px);
+ user-select: none;
+ border-style:double;
+}
+#pointTotal {
+ font-size: calc(var(--UIsize) / 100px * 270%);
+ text-align: center;
+ background-color:#dddddd;
+ width: calc(var(--UIsize) / 100px * 720px);
+ margin: auto;
+ margin-top: calc(var(--UIsize) / 100px * 12px);
+ border-radius: calc(var(--UIsize) / 100px * 10000px);
+ border-color: #444444;
+ border-width: calc(var(--UIsize) / 100px * 8px);
+ border-style:solid;
+ padding: calc(var(--UIsize) / 100px * 12px);
+ user-select: none;
+ }
 
 
 
@@ -85,32 +83,32 @@ font-family: Ubuntu;
 
 
 #containerP {
- font-size: 300%;
+ font-size: calc(var(--UIsize) / 100px * 300%);
  background-color:#dddddd;
- width: 1080px;
- height: 720px;
+ width: calc(var(--UIsize) / 100px * 1080px);
+ height: calc(var(--UIsize) / 100px * 720px);
  margin: auto;
- margin-top: 50px;
- border-radius: 12px;
+ margin-top: calc(var(--UIsize) / 100px * 50px);
+ border-radius: calc(var(--UIsize) / 100px * 12px);
  border-color: #000000;
- border-width: 12px; border-style:solid;
- padding: 12px;
+ border-width: calc(var(--UIsize) / 100px * 12px); border-style:solid;
+ padding: calc(var(--UIsize) / 100px * 12px);
  box-sizing: border-box;
  user-select: none;
  border-style: outset;
 }
 
 #containerR {
- font-size: 300%;
+ font-size: calc(var(--UIsize) / 100px * 300%);
  background-color:#e3f6f8;
- width: 1080px;
- height: 720px;
+ width: calc(var(--UIsize) / 100px * 1080px);
+ height: calc(var(--UIsize) / 100px * 720px);
  margin: auto;
- margin-top: 50px;
- border-radius: 12px;
+ margin-top: calc(var(--UIsize) / 100px * 50px);
+ border-radius: calc(var(--UIsize) / 100px * 12px);
  border-color: #25b0bf;
- border-width: 12px; border-style:solid;
- padding: 12px;
+ border-width: calc(var(--UIsize) / 100px * 12px); border-style:solid;
+ padding: calc(var(--UIsize) / 100px * 12px);
  box-sizing: border-box;
  user-select: none;
  border-style: outset;
@@ -121,17 +119,17 @@ font-family: Ubuntu;
 
 
 .upgrade {
- font-size: 300%;
+ font-size: calc(var(--UIsize) / 100px * 300%);
  text-align: center;
  align-items: center;
  background-color:#bbbbbb;
- width: 146.8px;
- height: 96px;
- margin: 7.565px;
- border-radius: 5px;
+ width: calc(var(--UIsize) / 100px * 146.8px);
+ height: calc(var(--UIsize) / 100px * 96px);
+ margin: calc(var(--UIsize) / 100px * 7.565px);
+ border-radius: calc(var(--UIsize) / 100px * 5px);
  border-color: #717171;
- border-width: 3px; border-style:solid;
- padding: 12px;
+ border-width: calc(var(--UIsize) / 100px * 3px); border-style:solid;
+ padding: calc(var(--UIsize) / 100px * 12px);
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -140,19 +138,19 @@ font-family: Ubuntu;
 }
 
 .title {
- font-size: 6.6%;
+ font-size: calc(var(--UIsize) / 100px * 6.6%);
  text-align: center;
  color:#ffb8b8;
  background-color:#505050;
- width: 126px;
- height: 18px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top: -9px;
- margin-bottom:9px; 
- border-radius: 3px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 18px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * -9px);
+ margin-bottom: calc(var(--UIsize) / 100px * 9px); 
+ border-radius: calc(var(--UIsize) / 100px * 3px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -161,19 +159,19 @@ font-family: Ubuntu;
 }
 
 .info {
- font-size: 6.48%;
+ font-size: calc(var(--UIsize) / 100px * 6.3%);
  text-align: center;
  color:#ffffff;
  background-color:#929292;
- width: 126px;
- height: 37.2px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top: -6px;
- margin-bottom: -6px; 
- border-radius: 3px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 37.2px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * -6px);
+ margin-bottom: calc(var(--UIsize) / 100px * -6px); 
+ border-radius: calc(var(--UIsize) / 100px * 3px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -182,19 +180,19 @@ font-family: Ubuntu;
 }
 
 .price {
- font-size: 8.5%;
+ font-size: calc(var(--UIsize) / 100px * 8.3%);
  text-align: center;
  color:#e4e4e4;
  background-color:#505050;
- width: 126px;
- height: 18px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top:9px;
- margin-bottom: -9px; 
- border-radius: 4.8px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 18px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * 9px);
+ margin-bottom: calc(var(--UIsize) / 100px * -9px); 
+ border-radius: calc(var(--UIsize) / 100px * 4.8px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -207,17 +205,17 @@ font-family: Ubuntu;
 
 
 .upgradeBlue {
- font-size: 300%;
+ font-size: calc(var(--UIsize) / 100px * 300%);
  text-align: center;
  align-items: center;
  background-color: #b8dde2;
- width: 146.8px;
- height: 96px;
- margin: 7.565px;
- border-radius: 5px;
+ width: calc(var(--UIsize) / 100px * 146.8px);
+ height: calc(var(--UIsize) / 100px * 96px);
+ margin: calc(var(--UIsize) / 100px * 7.565px);
+ border-radius: calc(var(--UIsize) / 100px * 5px);
  border-color: #9bb2b3;
- border-width: 3px; border-style:solid;
- padding: 12px;
+ border-width: calc(var(--UIsize) / 100px * 3px); border-style:solid;
+ padding: calc(var(--UIsize) / 100px * 12px);
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -226,19 +224,19 @@ font-family: Ubuntu;
 }
 
 .titleBlue {
- font-size: 6.6%;
+ font-size: calc(var(--UIsize) / 100px * 6.6%);
  text-align: center;
  color:#ffb8b8;
  background-color:#6b8588;
- width: 126px;
- height: 18px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top: -9px;
- margin-bottom:9px; 
- border-radius: 3px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 18px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * -9px);
+ margin-bottom: calc(var(--UIsize) / 100px * 9px); 
+ border-radius: calc(var(--UIsize) / 100px * 3px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -247,39 +245,39 @@ font-family: Ubuntu;
 }
 
 .infoBlue {
- font-size: 6.48%;
+ font-size: calc(var(--UIsize) / 100px * 6.3%);
  text-align: center;
  color:#ffffff;
  background-color:#81a0a3;
- width: 126px;
- height: 37.2px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top: -6px;
- margin-bottom: -6px; 
- border-radius: 3px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 37.2px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * -6px);
+ margin-bottom: calc(var(--UIsize) / 100px * -6px); 
+ border-radius: calc(var(--UIsize) / 100px * 3px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
  position: relative;
  border-style:outset;
 }
-.priceBlue {
- font-size: 8.5%;
+.priceBlue {  
+ font-size: calc(var(--UIsize) / 100px * 8.3%);
  text-align: center;
  color:#e4e4e4;
  background-color:#6b8588;
- width: 126px;
- height: 18px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top:9px;
- margin-bottom: -9px; 
- border-radius: 4.8px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 18px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * 9px);
+ margin-bottom: calc(var(--UIsize) / 100px * -9px); 
+ border-radius: calc(var(--UIsize) / 100px * 4.8px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -297,7 +295,8 @@ font-family: Ubuntu;
 }
 
 .upgrade:active {
-  border-style:double
+ border-color: #7b85b6;
+ background-color: #9eafd4;
 }
 .upgradeBlue:hover {
  border-color: #9ba3c9;
@@ -306,23 +305,24 @@ font-family: Ubuntu;
 }
 
 .upgradeBlue:active {
-  border-style:double
+ border-color: #7b85b6;
+ background-color: #9eafd4;
 }
 
 
 
 .upgradeInvis {
- font-size: 300%;
+ font-size: calc(var(--UIsize) / 100px * 300%);
  text-align: center;
  align-items: center;
  background-color:#bbbbbb;
- width: 146.8px;
- height: 96px;
- margin: 7.565px;
- border-radius: 5px;
+ width: calc(var(--UIsize) / 100px * 146.8px);
+ height: calc(var(--UIsize) / 100px * 96px);
+ margin: calc(var(--UIsize) / 100px * 7.565px);
+ border-radius: calc(var(--UIsize) / 100px * 5px);
  border-color: #717171;
- border-width: 3px; border-style:solid;
- padding: 12px;
+ border-width: calc(var(--UIsize) / 100px * 3px); border-style:solid;
+ padding: calc(var(--UIsize) / 100px * 12px);
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -332,19 +332,19 @@ font-family: Ubuntu;
  pointer-events: none;
 }
 .titleInvis {
- font-size: 6%;
+ font-size: calc(var(--UIsize) / 100px * 6%);
  text-align: center;
  color:#ffb8b8;
  background-color:#505050;
- width: 126px;
- height: 18px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top: -9px;
- margin-bottom:9px; 
- border-radius: 3px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 18px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * -9px);
+ margin-bottom: calc(var(--UIsize) / 100px * 9px); 
+ border-radius: calc(var(--UIsize) / 100px * 3px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -355,19 +355,19 @@ font-family: Ubuntu;
 }
 
 .infoInvis {
- font-size: 6.6%;
+ font-size: calc(var(--UIsize) / 100px * 6.7%);
  text-align: center;
  color:#ffffff;
  background-color:#929292;
- width: 126px;
- height: 37.2px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top: -6px;
- margin-bottom: -6px; 
- border-radius: 3px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 37.2px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * -6px);
+ margin-bottom: calc(var(--UIsize) / 100px * -6px); 
+ border-radius: calc(var(--UIsize) / 100px * 3px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -378,19 +378,19 @@ font-family: Ubuntu;
 }
 
 .priceInvis {
- font-size: 9%;
+ font-size: calc(var(--UIsize) / 100px * 9%);
  text-align: center;
  color:#e4e4e4;
  background-color:#505050;
- width: 126px;
- height: 18px;
- margin-left: -5px;
- margin-right: 5px;
- margin-top:9px;
- margin-bottom: -9px; 
- border-radius: 4.8px;
+ width: calc(var(--UIsize) / 100px * 126px);
+ height: calc(var(--UIsize) / 100px * 18px);
+ margin-left: calc(var(--UIsize) / 100px * -5px);
+ margin-right: calc(var(--UIsize) / 100px * 5px);
+ margin-top: calc(var(--UIsize) / 100px * 9px);
+ margin-bottom: calc(var(--UIsize) / 100px * -9px); 
+ border-radius: calc(var(--UIsize) / 100px * 4.8px);
  border-color: #000000;
- border-width: 2.4px;
+ border-width: calc(var(--UIsize) / 100px * 2.4px);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -416,17 +416,17 @@ font-family: Ubuntu;
 
 
 #DevToolsBox {
- font-size: 75%;
+ font-size: calc(var(--UIsize) / 100px * 75%);
  text-align: center;
  background-color:#dddddd;
- width: 600px;
+ width: calc(var(--UIsize) / 100px * 600px);
  margin: auto;
- margin-top: 12px;
- border-radius: 10000px;
+ margin-top: calc(var(--UIsize) / 100px * 12px);
+ border-radius: calc(var(--UIsize) / 100px * 10000px);
  border-color: #3f7967;
- border-width:8px;
+ border-width: calc(var(--UIsize) / 100px * 8px);
  border-style:solid;
- padding: 12px;
+ padding: calc(var(--UIsize) / 100px * 12px);
  user-select: none;
  border-style:double;
  display:block;
@@ -434,17 +434,17 @@ font-family: Ubuntu;
 
 
 #RESET {
- font-size: 80%;
+ font-size: calc(var(--UIsize) / 100px * 80%);
  text-align: center;
  background-color:#dddddd;
- width: 480px;
+ width: calc(var(--UIsize) / 100px * 480px);
  margin: auto;
- margin-top: 12px;
- border-radius: 10000px;
+ margin-top: calc(var(--UIsize) / 100px * 12px);
+ border-radius: calc(var(--UIsize) / 100px * 10000px);
  border-color: #995252;
- border-width:8px;
+ border-width: calc(var(--UIsize) / 100px * 8px);
  border-style:solid;
- padding: 12px;
+ padding: calc(var(--UIsize) / 100px * 12px);
  user-select: none;
  border-style:double;
  display:block;
@@ -453,23 +453,22 @@ font-family: Ubuntu;
 
 
 #MOREPOINTS {
- font-size: 80%;
+ font-size: calc(var(--UIsize) / 100px * 80%);
  text-align: center;
  background-color:#dddddd;
- width: 360px;
+ width: calc(var(--UIsize) / 100px * 360px);
  margin: auto;
- margin-top: 12px;
- border-radius: 10000px;
+ margin-top: calc(var(--UIsize) / 100px * 12px);
+ border-radius: calc(var(--UIsize) / 100px * 10000px);
  border-color: #4a5d90;
- border-width:8px;
+ border-width: calc(var(--UIsize) / 100px * 8px);
  border-style:solid;
- padding: 12px;
+ padding: calc(var(--UIsize) / 100px * 12px);
  user-select: none;
  border-style:double;
  display:block;
  cursor:pointer;
 }
-
 
 
 
@@ -506,43 +505,88 @@ font-family: Ubuntu;
 
 
 .currenciesP {
- font-size: 125%;
- width: 200px;
- height: 20px;
+ font-size: 1.5vw;
+ width: 15vw;
+ height: 2vw;
  text-align: center;
  background-color:#bbbbbb;
- border-radius: 12px;
+ border-radius: 0.8vw;
  border-color:#505050;
- border-width: 5px;
+ border-width: 0.4vw;
  border-style:solid;
- padding: 5px;
+ padding: 0.2vw;
  user-select: none;
  bottom: 0;
  right: 0;
  position: fixed;
- margin: 12px;
+ margin-right: 1vw;
+ margin-bottom: 1vw;
  border-style:outset;
 }
 .currenciesR {
- font-size: 125%;
- width: 200px;
- height: 20px;
+ font-size: 1.5vw;
+ width: 15vw;
+ height: 2vw;
  text-align: center;
  background-color:#b8dde2;
- border-radius: 12px;
+ border-radius: 0.8vw;
  border-color:#25b0bf;
- border-width: 5px;
+ border-width: 0.4vw;
  border-style:solid;
- padding: 5px;
+ padding: 0.2vw;
  user-select: none;
  bottom: 0;
  right: 0;
  position: fixed;
- margin-right: 12px;
- margin-bottom: 52px;
+ margin-right: 1vw;
+ margin-bottom: 4.5vw;
  border-style:outset;
 }
 
+
+
+
+
+#UIOptionText {
+ font-size: 0.87vw;
+ width: 16vw;
+ height: 2.5vw;
+ text-align: center;
+ background-color:#e2c5b8;  
+ border-radius: 0.8vw;
+ border-color:#bf2525;
+ border-width: 0.4vw;
+ border-style:solid;
+ padding: 0.2vw;
+ user-select: none;
+ bottom: 0;
+ left: 0;
+ position: fixed;
+ margin-left: 1vw;
+ margin-bottom: 4.5vw;
+ border-style:outset;
+ cursor:pointer;
+}
+.OptionA {
+ font-size: 1vw;
+ width: 16vw;
+ height: 2vw;
+ text-align: center;
+ background-color:#e2c5b8;  
+ border-radius: 0.8vw;
+ border-color:#bf2525;
+ border-width: 0.4vw;
+ border-style:solid;
+ padding: 0.2vw;
+ user-select: none;
+ bottom: 0;
+ left: 0;
+ position: fixed;
+ margin-left: 1vw;
+ margin-bottom: 1vw;
+ border-style:outset;
+ cursor:text;
+}
 
 
 
@@ -551,19 +595,19 @@ font-family: Ubuntu;
 
 #infoBox {
  color:#aaaaaa;
- font-size: 150%;
+ font-size: calc(var(--UIsize) / 100px * 150%);
  text-align: center;
  background-color:#414141;
- width: 1080px;
- left: 50%;
+ width: calc(var(--UIsize) / 100px * 1080px);
+ left: calc(var(--UIsize) / 100px * 50%);
  margin-left: auto;
  margin-right: auto;
- margin-top: 1350px;
- border-radius: 12px;
+ margin-top: calc(var(--UIsize) / 100px * 1350px);
+ border-radius: calc(var(--UIsize) / 100px * 12px);
  border-color: #b90000;
- border-width:8px;
+ border-width: calc(var(--UIsize) / 100px * 8px);
  border-style:solid;
- padding: 12px;
+ padding: calc(var(--UIsize) / 100px * 12px);
  box-sizing: border-box;
  user-select:text ;
 }
