@@ -7,71 +7,71 @@ body {
  align-items: center;
  background-image: repeating-linear-gradient(135deg,
   #aaaaaa,
-  #aaaaaa calc(var(--UIsize) / 100px * 20px),
-  #888888 calc(var(--UIsize) / 100px * 20px),
-  #888888 calc(var(--UIsize) / 100px * 40px),
-  #666666 calc(var(--UIsize) / 100px * 40px),
-  #666666 calc(var(--UIsize) / 100px * 60px));
-  background-size: calc(var(--UIsize) / 100px *84.85px) calc(var(--UIsize) / 100px *84.85px);
+  #aaaaaa calc(var(--UIsize) / 100 * 20),
+  #888888 calc(var(--UIsize) / 100 * 20),
+  #888888 calc(var(--UIsize) / 100 * 40),
+  #666666 calc(var(--UIsize) / 100 * 40),
+  #666666 calc(var(--UIsize) / 100 * 60));
+  background-size: calc(var(--UIsize) / 100 *84.85) calc(var(--UIsize) / 100 *84.85);
 font-family: Ubuntu;
 
 
 #NiceInfoBox {
- font-size: calc(var(--UIsize) / 100px * 12px);
+ font-size: calc(var(--UIsize) / 100 * 12);
  text-align: center;
  background-color:#dddddd;
- width: calc(var(--UIsize) / 100px * 360px);
+ width: calc(var(--UIsize) / 100 * 360);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 12px);
- border-radius: calc(var(--UIsize) / 100px * 10000px);
+ margin-top: calc(var(--UIsize) / 100 * 12);
+ border-radius: calc(var(--UIsize) / 100 * 10000);
  border-color: #444444;
- border-width: calc(var(--UIsize) / 100px * 8px);
+ border-width: calc(var(--UIsize) / 100 * 8);
  border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ padding: calc(var(--UIsize) / 100 * 12);
  user-select: none;
  border-style:double;
 }
 #pointGainB {
- font-size: calc(var(--UIsize) / 100px * 18px);
+ font-size: calc(var(--UIsize) / 100 * 18);
  text-align: center;
  background-color:#dddddd;
- width: calc(var(--UIsize) / 100px * 480px);
+ width: calc(var(--UIsize) / 100 * 480);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 12px);
- border-radius: calc(var(--UIsize) / 100px * 10000px);
+ margin-top: calc(var(--UIsize) / 100 * 12);
+ border-radius: calc(var(--UIsize) / 100 * 10000);
  border-color: #444444;
- border-width: calc(var(--UIsize) / 100px * 8px);
+ border-width: calc(var(--UIsize) / 100 * 8);
  border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px); 
+ padding: calc(var(--UIsize) / 100 * 12); 
  border-style:double;
 }
 #pointGain {
- font-size: calc(var(--UIsize) / 100px * 25px);
+ font-size: calc(var(--UIsize) / 100 * 25);
  text-align: center;
  background-color:#dddddd;
- width: calc(var(--UIsize) / 100px * 600px);
+ width: calc(var(--UIsize) / 100 * 600);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 12px);
- border-radius: calc(var(--UIsize) / 100px * 10000px);
+ margin-top: calc(var(--UIsize) / 100 * 12);
+ border-radius: calc(var(--UIsize) / 100 * 10000);
  border-color: #444444;
- border-width: calc(var(--UIsize) / 100px * 8px);
+ border-width: calc(var(--UIsize) / 100 * 8);
  border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ padding: calc(var(--UIsize) / 100 * 12);
  user-select: none;
  border-style:double;
 }
 #pointTotal {
- font-size: calc(var(--UIsize) / 100px * 45px);
+ font-size: calc(var(--UIsize) / 100 * 45);
  text-align: center;
  background-color:#dddddd;
- width: calc(var(--UIsize) / 100px * 720px);
+ width: calc(var(--UIsize) / 100 * 720);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 12px);
- border-radius: calc(var(--UIsize) / 100px * 10000px);
+ margin-top: calc(var(--UIsize) / 100 * 12);
+ border-radius: calc(var(--UIsize) / 100 * 10000);
  border-color: #444444;
- border-width: calc(var(--UIsize) / 100px * 8px);
+ border-width: calc(var(--UIsize) / 100 * 8);
  border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ padding: calc(var(--UIsize) / 100 * 12);
  user-select: none;
  }
 
@@ -83,32 +83,32 @@ font-family: Ubuntu;
 
 
 #containerP {
- font-size: calc(var(--UIsize) / 100px * 48px);
+ font-size: calc(var(--UIsize) / 100 * 48);
  background-color:#dddddd;
- width: calc(var(--UIsize) / 100px * 1075px);
- height: calc(var(--UIsize) / 100px * 710px);
+ width: calc(var(--UIsize) / 100 * 1075);
+ height: calc(var(--UIsize) / 100 * 710);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 50px);
- border-radius: calc(var(--UIsize) / 100px * 12px);
+ margin-top: calc(var(--UIsize) / 100 * 50);
+ border-radius: calc(var(--UIsize) / 100 * 12);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 12px); border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ border-width: calc(var(--UIsize) / 100 * 12); border-style:solid;
+ padding: calc(var(--UIsize) / 100 * 12);
  box-sizing: border-box;
  user-select: none;
  border-style: outset;
 }
 
 #containerR {
- font-size: calc(var(--UIsize) / 100px * 48px);
+ font-size: calc(var(--UIsize) / 100 * 48);
  background-color:#e3f6f8;
- width: calc(var(--UIsize) / 100px * 1075px);
- height: calc(var(--UIsize) / 100px * 710px);
+ width: calc(var(--UIsize) / 100 * 1075);
+ height: calc(var(--UIsize) / 100 * 710);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 50px);
- border-radius: calc(var(--UIsize) / 100px * 12px);
+ margin-top: calc(var(--UIsize) / 100 * 50);
+ border-radius: calc(var(--UIsize) / 100 * 12);
  border-color: #25b0bf;
- border-width: calc(var(--UIsize) / 100px * 12px); border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ border-width: calc(var(--UIsize) / 100 * 12); border-style:solid;
+ padding: calc(var(--UIsize) / 100 * 12);
  box-sizing: border-box;
  user-select: none;
  border-style: outset;
@@ -119,17 +119,17 @@ font-family: Ubuntu;
 
 
 .upgrade {  
- font-size: calc(var(--UIsize) / 100px * 63px);
+ font-size: calc(var(--UIsize) / 100 * 63);
  text-align: center;
  align-items: center;
  background-color:#bbbbbb;
- width: calc(var(--UIsize) / 100px * 146.8px);
- height: calc(var(--UIsize) / 100px * 96px);
- margin: calc(var(--UIsize) / 100px * 7px);
- border-radius: calc(var(--UIsize) / 100px * 5px);
+ width: calc(var(--UIsize) / 100 * 146.8);
+ height: calc(var(--UIsize) / 100 * 96);
+ margin: calc(var(--UIsize) / 100 * 7);
+ border-radius: calc(var(--UIsize) / 100 * 5);
  border-color: #717171;
- border-width: calc(var(--UIsize) / 100px * 3px); border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ border-width: calc(var(--UIsize) / 100 * 3); border-style:solid;
+ padding: calc(var(--UIsize) / 100 * 12);
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -138,19 +138,19 @@ font-family: Ubuntu;
 }
 
 .title {
- font-size: calc(var(--UIsize) / 100px * 10px);
+ font-size: calc(var(--UIsize) / 100 * 10);
  text-align: center;
  color:#ffb8b8;
  background-color:#505050;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 18px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * -9px);
- margin-bottom: calc(var(--UIsize) / 100px * 9px); 
- border-radius: calc(var(--UIsize) / 100px * 3px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 18);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * -9);
+ margin-bottom: calc(var(--UIsize) / 100 * 9); 
+ border-radius: calc(var(--UIsize) / 100 * 3);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -159,19 +159,19 @@ font-family: Ubuntu;
 }
 
 .info {
- font-size: calc(var(--UIsize) / 100px * 8.5px);
+ font-size: calc(var(--UIsize) / 100 * 8.5);
  text-align: center;
  color:#ffffff;
  background-color:#929292;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 37.2px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * -6px);
- margin-bottom: calc(var(--UIsize) / 100px * -6px); 
- border-radius: calc(var(--UIsize) / 100px * 3px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 37.2);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * -6);
+ margin-bottom: calc(var(--UIsize) / 100 * -6); 
+ border-radius: calc(var(--UIsize) / 100 * 3);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -180,19 +180,19 @@ font-family: Ubuntu;
 }
 
 .price {
- font-size: calc(var(--UIsize) / 100px * 11px);
+ font-size: calc(var(--UIsize) / 100 * 11);
  text-align: center;
  color:#e4e4e4;
  background-color:#505050;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 18px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * 9px);
- margin-bottom: calc(var(--UIsize) / 100px * -9px); 
- border-radius: calc(var(--UIsize) / 100px * 4.8px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 18);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * 9);
+ margin-bottom: calc(var(--UIsize) / 100 * -9); 
+ border-radius: calc(var(--UIsize) / 100 * 4.8);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -205,17 +205,17 @@ font-family: Ubuntu;
 
 
 .upgradeBlue {
- font-size: calc(var(--UIsize) / 100px * 63px);
+ font-size: calc(var(--UIsize) / 100 * 63);
  text-align: center;
  align-items: center;
  background-color: #b8dde2;
- width: calc(var(--UIsize) / 100px * 146.8px);
- height: calc(var(--UIsize) / 100px * 96px);
- margin: calc(var(--UIsize) / 100px * 7px);
- border-radius: calc(var(--UIsize) / 100px * 5px);
+ width: calc(var(--UIsize) / 100 * 146.8);
+ height: calc(var(--UIsize) / 100 * 96);
+ margin: calc(var(--UIsize) / 100 * 7);
+ border-radius: calc(var(--UIsize) / 100 * 5);
  border-color: #9bb2b3;
- border-width: calc(var(--UIsize) / 100px * 3px); border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ border-width: calc(var(--UIsize) / 100 * 3); border-style:solid;
+ padding: calc(var(--UIsize) / 100 * 12);
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -224,19 +224,19 @@ font-family: Ubuntu;
 }
 
 .titleBlue {
- font-size: calc(var(--UIsize) / 100px * 10px);
+ font-size: calc(var(--UIsize) / 100 * 10);
  text-align: center;
  color:#ffb8b8;
  background-color:#6b8588;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 18px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * -9px);
- margin-bottom: calc(var(--UIsize) / 100px * 9px); 
- border-radius: calc(var(--UIsize) / 100px * 3px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 18);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * -9);
+ margin-bottom: calc(var(--UIsize) / 100 * 9); 
+ border-radius: calc(var(--UIsize) / 100 * 3);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -245,19 +245,19 @@ font-family: Ubuntu;
 }
 
 .infoBlue {
- font-size: calc(var(--UIsize) / 100px * 8.5px);
+ font-size: calc(var(--UIsize) / 100 * 8.5);
  text-align: center;
  color:#ffffff;
  background-color:#81a0a3;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 37.2px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * -6px);
- margin-bottom: calc(var(--UIsize) / 100px * -6px); 
- border-radius: calc(var(--UIsize) / 100px * 3px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 37.2);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * -6);
+ margin-bottom: calc(var(--UIsize) / 100 * -6); 
+ border-radius: calc(var(--UIsize) / 100 * 3);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -265,19 +265,19 @@ font-family: Ubuntu;
  border-style:outset;
 }
 .priceBlue {  
- font-size: calc(var(--UIsize) / 100px * 11px);
+ font-size: calc(var(--UIsize) / 100 * 11);
  text-align: center;
  color:#e4e4e4;
  background-color:#6b8588;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 18px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * 9px);
- margin-bottom: calc(var(--UIsize) / 100px * -9px); 
- border-radius: calc(var(--UIsize) / 100px * 4.8px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 18);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * 9);
+ margin-bottom: calc(var(--UIsize) / 100 * -9); 
+ border-radius: calc(var(--UIsize) / 100 * 4.8);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -312,17 +312,17 @@ font-family: Ubuntu;
 
 
 .upgradeInvis {
- font-size: calc(var(--UIsize) / 100px * 63px);
+ font-size: calc(var(--UIsize) / 100 * 63);
  text-align: center;
  align-items: center;
  background-color:#bbbbbb;
- width: calc(var(--UIsize) / 100px * 146.8px);
- height: calc(var(--UIsize) / 100px * 96px);
- margin: calc(var(--UIsize) / 100px * 7px);
- border-radius: calc(var(--UIsize) / 100px * 5px);
+ width: calc(var(--UIsize) / 100 * 146.8);
+ height: calc(var(--UIsize) / 100 * 96);
+ margin: calc(var(--UIsize) / 100 * 7);
+ border-radius: calc(var(--UIsize) / 100 * 5);
  border-color: #717171;
- border-width: calc(var(--UIsize) / 100px * 3px); border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ border-width: calc(var(--UIsize) / 100 * 3); border-style:solid;
+ padding: calc(var(--UIsize) / 100 * 12);
  box-sizing: border-box;
  user-select: none;
  position: relative;
@@ -332,19 +332,19 @@ font-family: Ubuntu;
  pointer-events: none;
 }
 .titleInvis {
- font-size: calc(var(--UIsize) / 100px * 10px);
+ font-size: calc(var(--UIsize) / 100 * 10);
  text-align: center;
  color:#ffb8b8;
  background-color:#505050;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 18px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * -9px);
- margin-bottom: calc(var(--UIsize) / 100px * 9px); 
- border-radius: calc(var(--UIsize) / 100px * 3px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 18);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * -9);
+ margin-bottom: calc(var(--UIsize) / 100 * 9); 
+ border-radius: calc(var(--UIsize) / 100 * 3);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -355,19 +355,19 @@ font-family: Ubuntu;
 }
 
 .infoInvis {
- font-size: calc(var(--UIsize) / 100px * 8.5px);
+ font-size: calc(var(--UIsize) / 100 * 8.5);
  text-align: center;
  color:#ffffff;
  background-color:#929292;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 37.2px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * -6px);
- margin-bottom: calc(var(--UIsize) / 100px * -6px); 
- border-radius: calc(var(--UIsize) / 100px * 3px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 37.2);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * -6);
+ margin-bottom: calc(var(--UIsize) / 100 * -6); 
+ border-radius: calc(var(--UIsize) / 100 * 3);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -378,19 +378,19 @@ font-family: Ubuntu;
 }
 
 .priceInvis {
- font-size: calc(var(--UIsize) / 100px * 11px);
+ font-size: calc(var(--UIsize) / 100 * 11);
  text-align: center;
  color:#e4e4e4;
  background-color:#505050;
- width: calc(var(--UIsize) / 100px * 126px);
- height: calc(var(--UIsize) / 100px * 18px);
- margin-left: calc(var(--UIsize) / 100px * -4.5px);
- margin-right: calc(var(--UIsize) / 100px * 5px);
- margin-top: calc(var(--UIsize) / 100px * 9px);
- margin-bottom: calc(var(--UIsize) / 100px * -9px); 
- border-radius: calc(var(--UIsize) / 100px * 4.8px);
+ width: calc(var(--UIsize) / 100 * 126);
+ height: calc(var(--UIsize) / 100 * 18);
+ margin-left: calc(var(--UIsize) / 100 * -4.5);
+ margin-right: calc(var(--UIsize) / 100 * 5);
+ margin-top: calc(var(--UIsize) / 100 * 9);
+ margin-bottom: calc(var(--UIsize) / 100 * -9); 
+ border-radius: calc(var(--UIsize) / 100 * 4.8);
  border-color: #000000;
- border-width: calc(var(--UIsize) / 100px * 2.4px);
+ border-width: calc(var(--UIsize) / 100 * 2.4);
  border-style:solid;
  box-sizing: border-box;
  user-select: none;
@@ -416,17 +416,17 @@ font-family: Ubuntu;
 
 
 #DevToolsBox {
- font-size: calc(var(--UIsize) / 100px * 15px);
+ font-size: calc(var(--UIsize) / 100 * 15);
  text-align: center;
  background-color:#dddddd;
- width: calc(var(--UIsize) / 100px * 600px);
+ width: calc(var(--UIsize) / 100 * 600);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 12px);
- border-radius: calc(var(--UIsize) / 100px * 10000px);
+ margin-top: calc(var(--UIsize) / 100 * 12);
+ border-radius: calc(var(--UIsize) / 100 * 10000);
  border-color: #3f7967;
- border-width: calc(var(--UIsize) / 100px * 8px);
+ border-width: calc(var(--UIsize) / 100 * 8);
  border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ padding: calc(var(--UIsize) / 100 * 12);
  user-select: none;
  border-style:double;
  display:block;
@@ -434,17 +434,17 @@ font-family: Ubuntu;
 
 
 #RESET {
- font-size: calc(var(--UIsize) / 100px * 15px);
+ font-size: calc(var(--UIsize) / 100 * 15);
  text-align: center;
  background-color:#dddddd;
- width: calc(var(--UIsize) / 100px * 480px);
+ width: calc(var(--UIsize) / 100 * 480);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 12px);
- border-radius: calc(var(--UIsize) / 100px * 10000px);
+ margin-top: calc(var(--UIsize) / 100 * 12);
+ border-radius: calc(var(--UIsize) / 100 * 10000);
  border-color: #995252;
- border-width: calc(var(--UIsize) / 100px * 8px);
+ border-width: calc(var(--UIsize) / 100 * 8);
  border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ padding: calc(var(--UIsize) / 100 * 12);
  user-select: none;
  border-style:double;
  display:block;
@@ -453,17 +453,17 @@ font-family: Ubuntu;
 
 
 #MOREPOINTS {
- font-size: calc(var(--UIsize) / 100px * 15px);
+ font-size: calc(var(--UIsize) / 100 * 15);
  text-align: center;
  background-color:#dddddd;
- width: calc(var(--UIsize) / 100px * 360px);
+ width: calc(var(--UIsize) / 100 * 360);
  margin: auto;
- margin-top: calc(var(--UIsize) / 100px * 12px);
- border-radius: calc(var(--UIsize) / 100px * 10000px);
+ margin-top: calc(var(--UIsize) / 100 * 12);
+ border-radius: calc(var(--UIsize) / 100 * 10000);
  border-color: #4a5d90;
- border-width: calc(var(--UIsize) / 100px * 8px);
+ border-width: calc(var(--UIsize) / 100 * 8);
  border-style:solid;
- padding: calc(var(--UIsize) / 100px * 12px);
+ padding: calc(var(--UIsize) / 100 * 12);
  user-select: none;
  border-style:double;
  display:block;
@@ -575,19 +575,19 @@ font-family: Ubuntu;
 
 #infoBox {
  color:#aaaaaa;
- font-size: calc(var(--UIsize) / 100px * 30px);
+ font-size: calc(var(--UIsize) / 100 * 30);
  text-align: center;
  background-color:#414141;
- width: calc(var(--UIsize) / 100px * 1000px);
- left: calc(var(--UIsize) / 100px * 50%);
+ width: calc(var(--UIsize) / 100 * 1000);
+ left: calc(var(--UIsize) / 100 * 50%);
  margin-left: auto;
  margin-right: auto;
- margin-top: calc(var(--UIsize) / 100px * 1350px);
- border-radius: calc(var(--UIsize) / 100px * 12px);
+ margin-top: calc(var(--UIsize) / 100 * 1350);
+ border-radius: calc(var(--UIsize) / 100 * 12);
  border-color: #b90000;
- border-width: calc(var(--UIsize) / 100px * 8px);
+ border-width: calc(var(--UIsize) / 100 * 8);
  border-style:solid;
- padding: calc(var(--UIsize) / 100px * 4px);
+ padding: calc(var(--UIsize) / 100 * 4);
  box-sizing: border-box;
  user-select:text ;
 }
