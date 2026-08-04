@@ -125,11 +125,33 @@ if (localStorage.getItem("UIsize") !== null) {
 UIsize = JSON.parse(localStorage.getItem("UIsize"));
 }
 
+let OfflineProgressCheck = Date.now();
+
+if (localStorage.getItem("OfflineProgressCheck") !== null) {
+OfflineProgressCheck = JSON.parse(localStorage.getItem("OfflineProgressCheck"));
+}
+
+
+
 
 let SuffixTransferValue = [0, 0, 0, 0, 0, 0];
 let SuffixValue = [0, 0, 0, 0, 0, 0];
 
 console.log("Uhhh what's the point of going in logs rn? you have buttons to get exponentially more points...");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -231,7 +253,7 @@ pointsBase = 1 + (PointUpgrades[0][1]*(1+PointUpgrades[0][2]/2));
 pointsMult = Math.round(1 * (1+0.5*PointUpgrades[1][0])
 * (1+PointUpgrades[2][0]) 
 * (1+PointUpgrades[1][2]*1.25)
-* Math.max(PointUpgrades[1][3]*(Math.log10((1+research)**(1/Math.log10(10-PointUpgrades[2][3])))+1), 1)
+* Math.max(PointUpgrades[1][3]*(Math.log10(1+research)/Math.log10(10-PointUpgrades[2][3]))+1, 1)
 * Math.max(PointUpgradesCost[2][1], 1)
 * (1+(ResearchUpgrades[0][0]/2))
 * (2**ResearchUpgrades[2][0])
@@ -549,7 +571,7 @@ if (PointUpgrades[0][3] == 1 && PointUpgrades[1][2] == 1) {
     document.getElementById("titleBD_P").className = "title" ;
     document.getElementById("infoBD_P").className = "info" ;
     document.getElementById("priceBD_P").className = "price" ;
-    document.getElementById("infoBD_P").title = "Multiplies point gain by: "+ Math.round(Math.max((Math.log10((1+research)**(1/Math.log10(10-PointUpgrades[2][3])))+1), 1)*100)/100+".";
+    document.getElementById("infoBD_P").title = "Multiplies point gain by: "+ Math.round(Math.max(PointUpgrades[1][3]*(Math.log10(1+research)/Math.log10(10-PointUpgrades[2][3]))+1, 1)*100)/100+".";
     document.getElementById("priceBD_P").textContent = PointUpgradesSuffix[1][3]+" P ("+PointUpgrades[1][3]+"/1)";
     }
 else {
@@ -783,16 +805,20 @@ if(true) {
 
 // POINT GAIN FUNCTION AND MORE
 setInterval(function(){
-    points += pointsTotal/25;
+    points += (pointsTotal/25)*(Date.now()-OfflineProgressCheck)/40;
     timeSinceR += 40000;
 
 document.querySelector(":root").style.setProperty("--UIsize", (UIsize)+"px");
+document.querySelector(":root").style.setProperty("--UIsizeB", (UIsize)+"%");
 
+
+    OfflineProgressCheck = Date.now()
 }, 40);
 
 
 // SAVE FUNCTION
 setInterval(function(){
+
     localStorage.setItem("Points", JSON.stringify(points));
     localStorage.setItem("PointUpgrades", JSON.stringify(PointUpgrades));
     localStorage.setItem("Research", JSON.stringify(research));
@@ -801,6 +827,7 @@ setInterval(function(){
     localStorage.setItem("timeSinceR", JSON.stringify(timeSinceR));
     localStorage.setItem("UIsize", JSON.stringify(UIsize));
     localStorage.setItem("RandomNumber", JSON.stringify(PointUpgrades[2][1]));
+    localStorage.setItem("OfflineProgressCheck", JSON.stringify(OfflineProgressCheck));
 }, 5000);
 
 
@@ -1032,5 +1059,5 @@ function MOREPOINTS() {
 
 
 function UIchange() {
-    UIsize = Number(document.getElementById("UIsizeOption").value);
+    UIsize = Number(window.prompt("Enter a UI size, must be a number. (Enter a negative number for black screen, enter a non number for super wacky mode!!)"));
 }
