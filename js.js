@@ -809,10 +809,8 @@ setInterval(function(){
     timeSinceR += 40000;
 
 document.querySelector(":root").style.setProperty("--UIsize", (UIsize)+"px");
-document.querySelector(":root").style.setProperty("--UIsizeB", (UIsize)+"%");
-
-
-    OfflineProgressCheck = Date.now()
+    
+OfflineProgressCheck = Date.now()
 }, 40);
 
 
